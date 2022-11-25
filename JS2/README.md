@@ -77,6 +77,5 @@ trimEnd() sondakı boşluqları silir
 padStart(4,"x")  sözün əvvəlində 3 x atır
 padEnd()
 charAt() - sözdəki simvolu qaytarır. məs: a.charAt(0)=c
-charCodeAt() - sözdəki simvolun asci kodun qaytarır
+charCodeAt() - sözdəki simvolun ascii kodun qaytarır
 
-Template literallar - `${}`
