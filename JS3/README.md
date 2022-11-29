@@ -317,7 +317,15 @@ div.appendChild(paragraf3);
 div.removeChild(paragraf2)
 // Paraqrafı Paraqraf3 ilə əvəz edirik
 div.replaceChild(paragraf3, paragraf)
-
+```
+Elementlərin classlarına əlavə etmə və silmə işləri üçün:
+```
+// Əlavə edir
+element.classList.add("classadi");
+// klası silir
+element.classList.remove("classadi");
+// varsa silir, yoxdursa əlavə edir
+element.classList.toggle("classadi");
 ```
 
 HTML obyektlərinin tapılması
