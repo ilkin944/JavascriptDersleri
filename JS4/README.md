@@ -34,6 +34,7 @@ let inter = setInterval(function(){
 
 clearInterval(inter)
 ```
+
 # Date obyekti
 ### Yeni təqvim obyekti yaratmaq üçün Date() dən istifadə olunur.
 ```
@@ -47,14 +48,12 @@ Yeni tarix obyekti yaratmağın 9 yolu var :
 ```
 new Date()
 new Date(date string)
-
 new Date(year,month)
 new Date(year,month,day)
 new Date(year,month,day,hours)
 new Date(year,month,day,hours,minutes)
 new Date(year,month,day,hours,minutes,seconds)
 new Date(year,month,day,hours,minutes,seconds,ms)
-
 new Date(milliseconds)
 ```
 
@@ -78,8 +77,10 @@ Date obyektinin İSO standartına çevirmək üçün toISOString() metodundan is
 const tarix = new Date();
 demo.innerHTML = tarix.toISOString();
 ```
+
 ### Get metodları
 Tarix obyektindən il, ay, gün, saat, və s. ala bilmək üçün isə aşağıdakı metodlardan istifadə edirik.
+
 ```
 const tarix = new Date();
 // il almaq üçün
@@ -257,6 +258,7 @@ for (let x of front) {
   metn += x;
 }
 ```
+
 ```
 let proqram = "JavaScript";
 
