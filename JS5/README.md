@@ -4,13 +4,13 @@ JavaScript kodunu icra edərkən müxtəlif xətalar baş verə bilər.
 Səhvlər proqramçı tərəfindən edilən kodlaşdırma səhvləri, səhv daxiletmə nəticəsində yaranan səhvlər və digər gözlənilməz hallar ola bilər.
 
 
-###try işə salınacaq (sınamaq üçün) kod blokunu müəyyən edir.
+###  try işə salınacaq (sınamaq üçün) kod blokunu müəyyən edir.
 
-###catch istənilən səhvi idarə etmək üçün kod blokunu müəyyənləşdirir.
+###  catch istənilən səhvi idarə etmək üçün kod blokunu müəyyənləşdirir.
 
-###finally nəticədən asılı olmayaraq işləmək üçün kod blokunu müəyyən edir.
+###  finally nəticədən asılı olmayaraq işləmək üçün kod blokunu müəyyən edir.
 
-###throw fərdi xətanı müəyyən edir.
+###  throw fərdi xətanı müəyyən edir.
 
 Kodumuzun necə xəta qaytara biləcəyini bir nümunə ilə yoxlayaq. Aşağıdakı misalda consolu bilərəkdən səfa yazıram. Try və catch cütlüyünün bu kodda səfin olduğunu bildirməsini istəyirəm. 
 ```
@@ -111,7 +111,7 @@ function funk() {
 
 JavaScriptdə səhvlərin qarşının alınması üçün digər bir üsul isə "use strict" istifadəsidir.
 
-###"use strict" nədir və nəyə görə istifadə edilir?
+### "use strict" nədir və nəyə görə istifadə edilir?
 
 JavaScriptdə ciddi rejim yaratmaq, səliqəsiz kod yazmamaq öncədən tanıdılmayan dəyərlərin qarşısını almaq üçün mütləq istifadə edilməli javascript özəlliyidir. "use strict" script teqi açıldıqdan dərhal sonra, script faylı daxilində başlanğıcda və ya funksiya daxilində yazılmalıdır. "use strict" istifadə etməyin bizə faydaları aşağıdakı nümumələrlədir.
 ```
@@ -177,7 +177,7 @@ funk();
 </script>
 ```
 
-#Arrow function (oxlu funksiyalar)
+# Arrow function (oxlu funksiyalar)
 
 Arrow function funksiyalarımızın yazılış tərzini qısaltmaqda bizə kömək edən üsuldur. Bu üsul vasitəsi ilə funksiya adının öncəsində və ya sonrasında yazdığımız function sözünü () əvəzində istifadə edə bilərik. Məsələn:
 ```
@@ -198,7 +198,7 @@ return "Oxlu funksiya"
 document.getElementById("demo").innerHTML = funk();
 </script>
 ```
-##Qeyd: Əgər funksiyanız sadəcə bir nəticə qaytarırsa və qaytardığı nəticə return ilə qayıdırsa onda fiqur mötərizələrimizi və return sözünüdə həmçinin silə bilərik.
+## Qeyd: Əgər funksiyanız sadəcə bir nəticə qaytarırsa və qaytardığı nəticə return ilə qayıdırsa onda fiqur mötərizələrimizi və return sözünüdə həmçinin silə bilərik.
 ```
 <p id="demo"></p>
 
@@ -221,7 +221,7 @@ Lakin alınan parametr sadəcə 1 ədəddirsə onda parametr üçün olan mötə
 funk = par => "ox " + par;
 ```
 
-##Ox funksiyası daxilində this açar sözü
+## Ox funksiyası daxilində this açar sözü
 
 this açar sözü adi funksiyalarla müqayisədə ox funksiyalarında da idarə olunması fərqlidir.
 
@@ -237,7 +237,7 @@ Hər iki nümunə metodu iki dəfə çağırır, əvvəlcə səhifə yükləndik
 
 Birinci misalda adi funksiyadan, ikinci misalda isə ox funksiyasından istifadə edilir.
 
-##Oxu: JS1 dərs. Javascriptdə hər şey obyektlərdən referans alır. 
+## Oxu: JS1 dərs. Javascriptdə hər şey obyektlərdən referans alır. 
 
 Nəticə göstərir ki, birinci nümunə iki müxtəlif obyekti (window və düymə), ikinci nümunə isə window obyektini iki dəfə qaytarır, çünki window obyekti funksiyanın "sahibi"-dir. 
 
@@ -286,7 +286,7 @@ document.getElementById("btn").addEventListener("click", funk);
 ```
 Lakin nəticədən göründüyü kimi ox funksiyalarında this açar sözü window obyektini qaytarır. Çünki funksiyanın sahibi (valideyni) window obyektidir.
 
-#Javascriptdə modullar
+# Javascriptdə modullar
 
 JavaScript modulları kodunuzu ayrı-ayrı fayllara bölməyə imkan verir.
 
