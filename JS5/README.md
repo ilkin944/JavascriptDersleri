@@ -6,19 +6,19 @@ Səhvlər proqramçı tərəfindən edilən kodlaşdırma səhvləri, səhv daxi
 
 ###  try işə salınacaq (sınamaq üçün) kod blokunu müəyyən edir.
 
-###  catch istənilən səhvi idarə etmək üçün kod blokunu müəyyənləşdirir.
+###  catch yaranan səhvi idarə etmək və göstərmək üçün kod blokunu müəyyənləşdirir.
 
 ###  finally nəticədən asılı olmayaraq işləmək üçün kod blokunu müəyyən edir.
 
 ###  throw fərdi xətanı müəyyən edir.
 
-Kodumuzun necə xəta qaytara biləcəyini bir nümunə ilə yoxlayaq. Aşağıdakı misalda consolu bilərəkdən səfa yazıram. Try və catch cütlüyünün bu kodda səfin olduğunu bildirməsini istəyirəm. 
+Kodumuzun necə xəta qaytara biləcəyini bir nümunə ilə yoxlayaq. Aşağıdakı misalda consolu bilərəkdən səhv yazıram. Try və catch cütlüyünün bu kodda səhvin olduğunu bildirməsini istəyirəm. 
 ```
 <p id="demo"></p>
 
 <script>
 try {
-  coonsole.loq("səhv yazılış);
+  coonsole.loqi("səhv yazılış);
 }
 catch(err) {
   document.getElementById("demo").innerHTML = err.message;
@@ -36,10 +36,10 @@ throw fərdi xəta yaratmağa imkan verir.
 Texniki olaraq bir istisna ata bilərsiniz (səhv atmaq) .
 
 İstisna String, Number, Boolean və ya Object ola bilər :
-
+```
 throw "rəqəm çox böyükdür";    // səhvimiz olarsa bu sözü qaytara bilərik
 throw 301;          // səhvimiz olarsa bir rəqəmdə qaytara bilərik
-
+```
 
 Əgər və throw blokunu try və catch ilə birlikdə istifadə etsəniz, proqram axınına nəzarət edə və fərdi xəta mesajları göndərə bilərsiniz
 
