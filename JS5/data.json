@@ -1,8 +1,0 @@
-{
-    "RGAcademy" : [
-        {"ders": "Frontend Proqramlaşdırma", "keçirilir" : "HTML, CSS, SCSS və SaSS, Bootstrap, Tailwind, Git, Github, JavaScript, React, Redux, Next JS, 3-cü tərəf alətlər"},
-        {"ders": "Backend Proqramlaşdırma", "keçirilir" : "Alqoritmlər, Git, Github, C#, OYP, ASP.Net, ASP .Net Core, MSSQL"},
-        {"ders": "Qrafik Dizayn", "keçirilir" : "Dizaynın əsasları, Adobe Photoshop, Adobe İllustrator, Adobe İnDesign, CorelDraw, Marketinqdə dizayn"},
-        {"ders": "UX/Uİ Dizayn", "keçirilir" : "Dizaynın əsasları, Adobe XD, Figma və digərləri"}
-    ]
-}
