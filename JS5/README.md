@@ -119,7 +119,7 @@ JavaScriptdə ciddi rejim yaratmaq, səliqəsiz kod yazmamaq öncədən tanıdı
 "use strict";
 a = 944;
 // burada error qayıdacaq. Çünki x öncədən təyin olunmayıb. 
-console.log(x)
+console.log(a)
 
 funk();
 function funk() {
@@ -142,14 +142,14 @@ delete eyo;
 
 
 function ciddi(eyniParametr, eyniParametr) {} 
-//, burada error qayıdacaq. Çünki ciddi rejim eyni adlı təkrar parametr istifadəsinə icazə vermir.
+// burada error qayıdacaq. Çünki ciddi rejim eyni adlı təkrar parametr istifadəsinə icazə vermir.
 </script>
 ```
 ```
 <script>
 a = 944;
 // burada error qayıtmayacaq. Çünki  ciddi rejim tələb olunmur
-console.log(x)
+console.log(a)
 
 funk();
 function funk() {
