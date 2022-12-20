@@ -2,7 +2,7 @@ const netice = () => {
     const adi = "RG Academy";
     const dersi = "Frontend proqramlaşdırma";
 
-    console.log("siz hazırda" + adi + ' də ' + dersi + 'öyrənirsiniz.');
+    return "siz hazırda " + adi + ' də ' + dersi + ' öyrənirsiniz.';
 };
 
-export default netice;
+export default netice

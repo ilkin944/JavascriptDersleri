@@ -1,3 +1,3 @@
 import netice from "./script.js"
 
-netice()
+demo.innerHTML = netice()

@@ -4,7 +4,7 @@
 ### Javascriptdə data tiplər:
 - Numbers - Rəqəmlər
 - Strings - Sözlər
-- Boolean - Məntiqi
+- Boolean - Məntiqi (true və ya false)
 - Objects {} - Obyektlər
 - Arrays - Massivlər
 - Undefined
@@ -56,6 +56,7 @@ let a = 50 / 60
 let x = 5;
 let y = 2;
 let z = x % y;
+// 5/2 qalıq = 1 
 ```
 - ** (** qüvvətə yüksəltmə)
 ```
@@ -113,22 +114,40 @@ x **= 5; // x = x ** 5
 
 3. Şərt operatorları (
 - if, else if, else
-- ? : (? 5 dirsə true : deyilsə 6 ) 
-- ?? (birinci arqumenti qaytarır, null və ya undefined dirsə ikincini qaytarır)
-- ?. (obyektlər üçün əgər bu varsa qaytarır)
+- ? : (? 5 dirsə true : deyilsə 6 )
+  ```
+  // burada əgər mötərizə daxilində təyin etdiyimiz yaş 18-dən böyükdürsə, true halı doğrudursa "xoş gəldiniz" əks halda isə "yaşınız azdır" ifadəsi qayıdacaq
 
-4. Müqayisə operatorları
+  let giris = (yas > 18) ? "xoş gəldiniz" : "yaşınız azdır"
+  ``` 
+- ?? (birinci arqumenti varsa qaytarır, əgər yoxdursa null və ya undefined qaytarır)
+  ```
+  //ad təyin edilib amma dəyər ötürülməyib
+  let ad 
+  let metn = "yoxdur";
+  let netice = ad ?? metn;
+  demo.innerHTML = "Ad " + netice;
+  ```
+- ?. (obyektlər üçündür. Əgər obyektin axtarılan keyi varsa varsa qaytarır, əks halda isə undefined və yə null qaytarır)
+  ```
+  // burada obyektin "ad" adında keyi olmadığına görə undefined qayıdacaq
+  const masin = {marka:"Fiat", model:"500", reng:"mavi"};
+  let ad = masin?.ad;
+  demo.innerHTML = ad;
+  ```
+
+1. Müqayisə operatorları
 - == (bərabərdirsə)
 - === (dəyər və tip olaraq bərabərdirsə)
 - != (fərqlidirsə)
 - !== (bərabər deyilsə)
-- -> (böyükdür)
+- .> (böyükdür)
 - < (kiçikdir)
-- `>= (böyükdür bərabərdir)
-- <= (kiçik bərabərdir)
+- .>= (böyükdür və ya bərabərdir)
+- <= (kiçikdir və ya bərabərdir)
 - ? (varsa)
 
-5. Məntiqi operatorlar 
+1. Məntiqi operatorlar 
 - && (və)
 - || (və ya)
 - ! (fərqli)
@@ -150,7 +169,9 @@ JavaScript dəyişənini elan etməyin 4 yolu:
 
 
 **var** ilə yaratdığımız dəyişkənlər həm qlobal mühitdə, həm də fiqur mötərizlər daxilində dəyişə və istənilən tipə keçid edə bilər
+
 **let** ilə yaratdığımız dəyişkənlər qlobal mühitdə öz, fiqur mötərizlər daxilində isə təyin edilmiş dəyişə ilə işləyir və istənilən tipə keçid edə bilər
+
 **const** ilə yaratdığımız dəyişkənlər isə sabit qalır və dəyişdirilə bilinməz
 
 ```
@@ -175,7 +196,10 @@ JavaScript funksiyası müəyyən bir tapşırığı yerinə yetirmək üçün n
 
 JavaScript funksiyası "bir şey" onu çağırdıqda (işləyir) yerinə yetirilir.
 
-JavaScript funksiyası **function** açar söz, ardınca funksiyanın adı və ardınca mötərizə () ilə müəyyən edilir .
+JavaScript funksiyası **function** açar sözü ilə başlayır, ardınca funksiyanın adı və funksiyanın mötərizəsi () sonra isə fiqur mötərizə ilə müəyyən edilir .
+```
+function ad(){}
+```
 
 JavaScript funksiya adları çox vaxt iki və daha artıq sözdən ibarət adlandırarkən, **camelCase** (ikinci və digər sözlərin ilk hərfləri böyük) üsulundan istifadə edilir. Məsələn: menimYeniFunksiyam();  
 
@@ -202,23 +226,25 @@ Funksiya tərəfindən yerinə yetiriləcək kod fiqur mötərizədə yerləşdi
 ### Funksiyalarda return
 Funksiya **return** ifadəsini icra etdikdə bitirmiş sayılır.
 
-Əgər funksiya bir ifadədən çağırılıbsa, JavaScript çağırış ifadəsindən sonra kodu yerinə yetirmək üçün "qaytaracaq".
+Əgər funksiya bir ifadədən çağırılıbsa, JavaScript çağırış ifadəsindən sonra kodu yerinə yetirmək üçün "return" edir.
 
-Funksiyalar tez-tez return olunan dəyəri hesablayır. Return olunan dəyər "çağrıldıqda" geri qaytarılır:
+Funksiyalar return olunan dəyəri hesablayır. Return olunan dəyər "çağrıldıqda" geri qaytarılır:
 
 ```
 // İki ədədin hasilini hesablayıb və nəticəni qaytaraq:
 
-let x = funksiyam(2, 5);   // Funksiya yaradıldı və ona nəticəsini hesablayacağı parametrlər göndərildi
+// Funksiya yaradıldı və ona nəticəsini hesablayacağı parametrlər göndərildi
+let x = funksiyam(2, 5);   
 
 function funksiyam(a, b) {
-  return a * b;             // funksiya a və b-nin hasilini hesablayacaq. a=2, b=5
+  return a * b;             
+  // funksiya a və b-nin hasilini hesablayacaq. a=2, b=5
 }
-//X-də nəticəsi isə belə olacaq: 12
+// X-də nəticəsi isə belə olacaq: 12
 ```
 
 
-### JavaScriptdə Hadisələr (Event)
+### JavaScriptdə Eventlər (Hadisə)
 
 HTML eventləri HTML elementləri ilə baş verən "şeylər"-dir.
 
