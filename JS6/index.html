@@ -12,6 +12,16 @@
     <p id="demo"></p>
 
     <script>
+        function callbackFunksiyası(kod) {
+            document.getElementById("demo").innerHTML = kod;
+        }
+
+        function topla(num1, num2, callbackFunksiyası) {
+            let cem = num1 + num2;
+            callbackFunksiyası(cem)
+        }
+
+        topla(5, 5, callbackFunksiyası);
 
     </script>
 </body>

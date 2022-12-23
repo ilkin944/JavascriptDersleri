@@ -206,7 +206,7 @@ Digər nümunədə isə topla funksiyasını çağırıb, *gosteren* funksiyası
 Artıq belə bir problemlə qarşılaşdıqda isə *callback* funksiyalardan istifadə edə bilərik. Callback funksiyası hər hansı bir funksiya işlədikdən sonra arqument olaraq başqa bir funksiyanı çağırmağa imkan verir.
 
 ```
-function gosteren(kod) {
+function callbackFunksiyası(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
 
