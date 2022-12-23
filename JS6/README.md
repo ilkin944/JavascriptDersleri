@@ -1,3 +1,54 @@
+# JSON
+
+JavaScript Object Notation (JSON) JavaScript obyekt sintaksisinə əsaslanan strukturlaşdırılmış məlumatları təmsil etmək üçün standart mətn əsaslı formatdır. O, əsasən proqramlarında məlumatların ötürülməsi üçün istifadə olunur (məsələn, bəzi məlumatların serverdən müştəriyə göndərilməsi, ona görə də onlar veb-səhifədə göstərilə bilər və ya əksinə). 
+
+JSON JavaScript obyektinin hərfi sintaksisinə yaxından bənzəsə də, JavaScript-dən müstəqil olaraq istifadə edilə bilər və bir çox proqramlaşdırma mühitləri JSON-u oxumaq (analiz etmək) və yaratmaq qabiliyyətinə malikdir.
+
+JSON sətir kimi mövcuddur — məlumatı şəbəkə üzrə ötürmək istədiyiniz zaman faydalıdır. Məlumata daxil olmaq istədiyiniz zaman onu yerli JavaScript obyektinə çevirmək lazımdır. Bu böyük problem deyil - JavaScript ikisi arasında konvertasiya etmək üçün mövcud üsullara malik qlobal JSON obyekti təqdim edir.
+
+
+Bir sətri local obyektə çevirmək deserializasiya, local obyekti şəbəkə üzrə ötürülə bilməsi üçün sətirə çevirmək serializasiya adlanır.
+
+Hazırda bu qovluq daxilində data.json adlı faylımız var və bu fayla Fetch API ilə müraciət edib məlumatları çəkməyə və üzərində işləməyə çalışaq
+
+
+Qayıdan məlumatları json tipində qəbul etdik.
+```
+async function melumatGetir() {
+    const sorguLinki = './data.json';
+    const request = new Request(sorguLinki);
+
+    const response = await fetch(request);
+    const melumat = await response.json();
+
+    console.log(melumat);
+}
+melumatGetir()
+```
+Həmçinin məlumatları JSON.parse(vairable) vasitəsi ilə strinq tipindən obyekt tipiniə deserilizasiya edə bilərik.
+
+```
+async function melumatGetir() {
+
+    const sorguLinki = './data.json';
+    const request = new Request(sorguLinki);
+
+    const response = await fetch(request);
+    const melumat = await response.text();
+
+    const txt = JSON.parse(melumat)
+    console.log(txt);
+}
+melumatGetir()
+```
+Və yaxud məlumatı json tipinə serializasiya edə bilərik
+
+```
+let obyk = { ad: "RG Academy", "ders": "Frontend" };
+let strinqim = JSON.stringify(obyk);
+console.log(strinqim);
+```
+
 # Storage
 
 Storage brauzerdə məlumatların saxlanması və əldə edilməsi üçün sadə sintaksisdir.
