@@ -438,9 +438,10 @@ function funksiyam() {
   let metn;
   let yas = prompt("Yaşınızı daxil edin:", "default dəyər 19");
   if (yas == null || yas == "") {
-    metn = "Əgər yaşınız 18-dən kiçikdirsə, səhifəni tərk etməyinizi xahiş edirik!";
+  metn = "Yaşınız " + yas + " olduğu üçün təbirklər";
+    
   } else {
-    metn = "Yaşınız " + yas + " olduğu üçün saytı təbirklər";
+    metn = "yaşınız 18-dən kiçik, oldugu üçün çıxış edin!";
   }
   document.write(metn);
 }
