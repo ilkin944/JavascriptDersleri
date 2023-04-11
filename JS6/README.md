@@ -45,10 +45,10 @@ Həmçinin APİ layihələrimizdə məlumatların idarə olunması üçün ən �
 
 API-lər Backend kodlaşdırılması ilə hazırlanmasına baxnayaraq əksər brauzerlərin özlərinin default API-ləri də mövcuddur. Məsələn istifadəçinin geolokasiyasını almaq üçün *navigator.geolocation* API-dən istifadə etmək olar.
 
-```
+```js
 const paraqraf = document.getElementById("demo");
 
-function locationTap {
+function locationTap() {
   if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(yeriGoster);
   } else {
     paraqraf.innerHTML = "Geolokasiya brauzerinizdə işləmir.";
@@ -59,26 +59,28 @@ function yeriGoster(yer) {
   paraqraf.innerHTML = "Enlik: " + position.coords.latitude +
   "<br>Uzunluq: " + position.coords.longitude;
 }
+locationTap();
 ```
 
 Həmçinin geolokasiyanı aktiv etmək, istifadəçinin ünvanını əldə etmək üçün ona sorğu göndərmək lazımdır. Əgər istifadəçi geolokasiyadan istifadəyə icazə verərsə onun ünvanını, ona yaxın olan məkanları göstərə bilərik.
 
 Bunun üçün əvvəlki *locationTap* funksiyamızın şərt bloku daxilində, *yeriGoster* funskiyası ilə birlikdə ikinci arqument kimi *sehviGoster* funksiyasını da çağırmaq lazımdır. 
 
-```
+```js
 const paraqraf = document.getElementById("demo");
 
-function locationTap {
-  if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(yeriGoster, sehviGoster);
+function locationTap() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(yeriGoster, sehviGoster);
   } else {
     paraqraf.innerHTML = "Geolokasiya brauzerinizdə işləmir.";
   }
 }
 
 function yeriGoster(yer) {
-  paraqraf.innerHTML = "Enlik: " + position.coords.latitude +
-  "<br>Uzunluq: " + position.coords.longitude;
-
+  paraqraf.innerHTML = "Enlik: " + yer.coords.latitude +
+  "<br>Uzunluq: " + yer.coords.longitude;
+}
 
 function sehviGoster(sehv) {
   switch(sehv.code) {
@@ -100,6 +102,9 @@ function sehviGoster(sehv) {
       break;
   }
 }
+
+locationTap();
+
 ```
 
 Əlavə olaraq istifadəçidən alınan enlik və uzunluq nəticələrini canlı xərtiə vasitəsi ilə də göstərmək mümkündür. Yuxarıdakı *yeriGoster* funksiyası daxilində bunları əlavə edə bilərik.
