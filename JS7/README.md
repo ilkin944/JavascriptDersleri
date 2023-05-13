@@ -2,7 +2,7 @@
 Javascriptdə hərşey obyektlərdən referans aldığını bilirik. Məsələn booleanlar, rəqəmlər, strinqlər, funksiyalar, massivlər. Javascriptdə olan obyektlər eyni ilə digər proqramlaşdırma dillərində də mövcuddur.
 
 Obyektlərin property-ləri istənilən tipdə məlumatı özündə saxlaya bilər. Bura həmçinin funksiyalarımızda daxildir. Məsələn
-``` 
+```js 
 const user = {
     ad: "Ilkin",
     soyad: "Zulfi",
@@ -15,23 +15,23 @@ console.log(user.tamAd())
 
 Obyektlərə istənilən qədər property əlavə etmək mümkündür. Bunun üçün obyektin adı.yeniProperty = "" yaza bilərik.
 
-```
+```js
 user.country = "Azerbaijan";
 ```
  
 Həmçinin obyektin propertylərini delete açar sözü vasitəsi ilə də silə bilərik. delete açar sözü vasitəsi ilə silinən propertynin dəyəridə həmçinin silinmiş olur və bu geriyə qaytarıla bilinmir. delete açar sözü obyekt propertyləri üçün yaradılmış açar sözdür. Yəni delete funksiya və ya digər məlumat tiplərində istifadə edib nəticə almaq mümkün deyil.
-```
+```js
 delete user.country;
 ```
 
 
 Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üsullar mövcuddur. Bunlardan bəziləri aşağıdakılardır: 
 - obyektin propertylərinin adlarına görə, 
-    ```
+    ```js
     console.log(user.ad)
     ```
 - dövrlərlə, 
-    ```
+    ```js
       const user = {
           ad: "Ilkin",
           soyad: "Zulfi",
@@ -40,17 +40,17 @@ Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üs
       }
       let txt = "";
       for (let a in user){
-        txt += user[x]
+        txt += user[a]
       }
       demo.innerHTML = txt;
-      ```
+    ```
 - Object.values()  - obyekti massivə çevirir
-  ```
+  ```js
     const myArr = Object.values(user);
     console.log(myArr);
   ```
 - JSON.stringify() - javascript string ə çevirir.
-    ```
+    ```js
     let str = JSON.stringify(user);
 
     console.log(str);
@@ -64,7 +64,7 @@ Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üs
 
 Get metodu obyektlərdə funksiya yaratmağa və nəticəsini döndürməyə imkan verən açar sözdür.
 
-```
+```js
 const user = {
   ad: "Ilkin",
   soyad: "Zulfi",
@@ -79,7 +79,7 @@ console.log(user.danisdigiDil);
 
 Set açar sözü isə obyektimizə hər hansı dəyər əlavə etmək üçün istifadə olunur.
 
-```
+```js
 const user = {
   ad: "Ilkin",
   soyad: "Zulfi",
