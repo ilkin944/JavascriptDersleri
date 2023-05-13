@@ -95,7 +95,7 @@ console.log(user.dil);
 
 Javascript obyektlərinin propertylərinin get və ya function olmasının fərqləri var. İlk növbədə get ilə təyin edilən funksiyanı çağırdıqda propertylərlə eyni qaydada çağırırıq. Funksiyalar çağırılıdıqda isə funksiyanın mötərizələri mütləq qoyulmalıdır.
 
-```
+```js
 // get ilə işlətdikdə
 
 const user = {
@@ -125,7 +125,7 @@ console.log(user.tamAd())
 ### Object.defineProperty()
 
 Object.defineProperty() metodu javascript obyektlərinə get və setləri tanıtmaqda istifadə olunur. Bunun üçün aşağıdakı üsuldan istifadə olunur:
-```
+```js
 //Object.defineProperty(obyektinAdi, "get və ya set üçün təyin etdiyimiz ad", {
 //  get və ya set: function(){kod blokumuz}
 //})
@@ -182,7 +182,7 @@ Konstruktorlar texniki cəhətdən normal funksiyalardır. Əlbəttə ki, bəzi 
 
 Misal üçün:
 
-```
+```js
 function Istifadeci(ad) {
   this.ad = ad;
   this.admindir = false;
@@ -200,7 +200,7 @@ Funksiya new Istifadeci(...){} kimi işləyərkən aşağıdakı addımlar yerin
 - Funksiyanın kod bloku işləyir. Ümumilikdə *this* dəyişdirilir və yeni funksiyalar (və ya özəlliklər) əlavə olunur.
 - *this* dəyəri qaytarır.
 
-```
+```js
 function Istifadeci(ad) {
   // this = {};  (obyekti ifadə edir)
 
@@ -213,7 +213,7 @@ function Istifadeci(ad) {
 ```
 
 Əgər konstruktorumuzun hər hansısa dəyəri gəlmədiyi halda default dəyərin almasını istəyiriksə onda, konstruktor mötərizələri daxilində default dəyəri daxil etməliyik.
-```
+```js
 function Istifadeci(ad, admindir=false) {
   this.ad = ad;
   this.admindir = admindir;
@@ -229,7 +229,7 @@ console.log(enYeniIstifadeci);
 Ümumi olaraq konstruktorlarında obyektlərin prototipi olduğunu artıq gördük. Lakin obyektlərdən prototip olaraq yaradılmasına baxmayaraq, obyektlərə yeni propertylərimizi əlavə etdiyimiz kimi konstruktorlara da əlavə edə bilmərik.
 
 
-```
+```js
 function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
     this.ad = ad;
     this.aciqlama = aciqlama;
@@ -244,7 +244,7 @@ Mehsul.endirimMeblegi = 15
 console.log(sirab.endirimMeblegi) //undefined
 ```
 
-```
+```js
 function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
     this.ad = ad;
     this.aciqlama = aciqlama;
@@ -260,7 +260,7 @@ console.log(sirab.endirimMeblegi) //15
 ```
 
 Həmçinin prototype açar sözü konstruktora yeni metod əlavə etməyə də imkan verir.
-```
+```js
 function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
             this.ad = ad;
             this.aciqlama = aciqlama;
@@ -283,7 +283,7 @@ function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
 # Class
 
 Class-lar javascript obyektlərindən fərqlidir. Class-ları konstruktorlarımız şablon yaradılmasında istifadə edirik. Buna görədə javascriptdə class yaradılarkən ona mütləq konstruktor da əlavə edilməlidir. Məsələn:
-```
+```js
 class Masin {
     constructor(marka, model, il, yuruyus, suretlerQutusu, rengi) {
         this.marka = marka;
@@ -306,7 +306,7 @@ demo.innerHTML = "Masinimin yasi " + masinim.yasi() + " dur."
 ```
 
 Həmçinin class içərisinə məlumatları arqument olaraqda göndərə bilərik.
-```
+```js
 class Masin {
     constructor(marka, model, il, yuruyus, suretlerQutusu, rengi) {
         this.marka = marka;
@@ -335,7 +335,7 @@ Classlarda varislik yaratmaq üçün *extends* açar sözündən sitifadə olunu
 
 Classlarda validen konsturktorumuzun çağırmaq və onun metodlarını istifadə etmək üçün isə *super()* açar sözündən istifadə edirik.
 
-```
+```js
 class Masin {
     constructor(marka) {
         this.marka = marka;
@@ -366,7 +366,7 @@ demo.innerHTML = menimMasinim.goster();
 
 Rest operatoru bizə gələ biləcək qeyri müəyyən sayda məlumatları saxlamağa icazə verir. Spread operatorunu funksiyanın arqumentlərini yaymağa, obyektləri və massivləri yaymağa kömək edir.
 
-```
+```js
 const array = ["HTML", "CSS", "SCSS"];
 const obj = {
     ...array,
@@ -384,11 +384,11 @@ function cem(...ededler) {
 let x = cem(15, 6, 20, 111);
 
 demo.innerHTML = x;
-```
+```js
 # Destructuring
 Massivlərin və ya obyektlərin property və valuelarını başqa bir dəyişənə mənimsətməyə icazə verən üsuldur.
 
-```
+```js
 let a, b, yayma;
 [a, b] = [10, 20];
 
@@ -400,7 +400,7 @@ console.log(b);
 
 console.log(yayma);
 ```
-```
+```js
 const masinlar = ['mustang', 'f-150', 'expedition'];
 
 const [car, , suv] = masinlar;
