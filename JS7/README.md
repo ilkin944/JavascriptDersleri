@@ -384,7 +384,7 @@ function cem(...ededler) {
 let x = cem(15, 6, 20, 111);
 
 demo.innerHTML = x;
-```js
+```
 # Destructuring
 Massivlərin və ya obyektlərin property və valuelarını başqa bir dəyişənə mənimsətməyə icazə verən üsuldur.
 
