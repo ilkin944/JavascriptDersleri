@@ -1,6 +1,7 @@
 # JavaScriptdə tiplər üzərində metodlar
 
-### Number üzərində metodlar
+## Number üzərində metodlar
+
 ```
 let a = 5.963
 
@@ -40,27 +41,90 @@ console.log(parseFloat("years 10"); // NaN
 ```
 
 ### Math library (Riyaziyyat kitabxanası)
-Math.round(a) - a nı ona ən yaxın tam ədədə yuvarlaqlaşdırmaq
 
-Math.ceil(a) - a nı bir üst tam ədədə yuvarlaqlaşdırmaq
+Math.round() - ədədi ona ən yaxın tam ədədə yuvarlaqlaşdırmaq üçün istifadə olunur
 
-Math.floor(a) - a nı bir alt tam ədədə yuvarlaqlaşdırmaq
+```javascript
+let a = 5.963;
+console.log(Math.round(a));
+// 5.963 ə yaxın tam ədəd 6-dır
+```
 
-Math.trunc(a) a-nın tam hissəsini tapmaq
+Math.ceil() - ədədi bir üst tam ədədə yuvarlaqlaşdırmaq üçün istifadə olunur
 
-Math.sign(-10) ədədin müsbət ya mənfi olmasın tapmaq
+```javascript
+let a = 5.063;
+console.log(Math.ceil(a));
+// 5.063 ədədinin bir üst tam ədədi 6-dır
+```
 
-Math.pow(2,4) ədəin qüvvətini tapmaq 2 üstü 4
+Math.floor() - ədədi bir alt tam ədədə yuvarlaqlaşdırmaq üçün istifadə olunur
 
-Math.sqrt(64) kökaltını tapmaq
+```javascript
+let a = 5.963;
+console.log(Math.floor(a));
+// 5.963 ədədinin bir alt tam ədədi 5-dır
+```
 
-Math.abs(-4.7) müsbət ədəd qaytarır
+Math.trunc(a) ədədin tam hissəsini tapmaq üçün istifadə olunur
+
+```javascript
+let a = 5.963;
+console.log(Math.trunc(a));
+// tam hissə 5-dir
+```
+
+Math.sign(-10) ədədin müsbət ya mənfi olmasın tapmaq üçün istifadə olunur
+
+```javascript
+let a = -10;
+let b = 10;
+console.log(Math.sign(a)); // -1 - a mənfidir
+console.log(Math.sign(b)); // 1 - b müsbətdir
+```
+
+Math.pow(x,y) ədəin qüvvətini tapmaq üçün istifadə olunur
+
+```javascript
+let a = 4;
+let b = 2;
+console.log(Math.pow(a, b)); // 4-ün üstü 2 = 16;
+```
+
+Math.sqrt() kökaltını tapmaq
+
+```javascript
+let a = 64;
+console.log(Math.sqrt(a));
+```
+
+Math.abs(x) müsbət ədəd qaytarır
+
+```javascript
+let a = -5.963;
+console.log(Math.abs(a));
+```
 
 Math.min(15, 562, 20, 8, -31, -200) minimum ədədi qaytarmaq
 
+```javascript
+let a = 5.963;
+console.log(Math.min(15, 562, 20, 8, -31, -200));
+```
+
 Math.max(15, 562, 20, 8, -31, -200) maksimum ədədi qaytarmaq
 
+```javascript
+console.log(Math.max(15, 562, 20, 8, -31, -200));
+```
+
 Math.random() - random ədədlər qaytarmaq
+
+```javascript
+console.log(Math.random());
+console.log(Math.random() * 10);
+```
+
 
 ### String-lər üzərində əməllər
 length - uzunluq
