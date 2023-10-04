@@ -289,7 +289,7 @@ console.log(a.substr(-1, 5))
 // t 
 ```
 
-- **indexOf()** - sozdeki simvolun indexin tapmaq üçündür. məs: a.indexOf(“e”)=3
+- **indexOf()** - sözdəki simvolun indexin tapmaq üçün istifadə olunur. Axtarış zamanı eyni simvol bir neçə dəfə keçsə belə ilk nəticəni göstərir
 
 ```js
 let a = "JavaScript"
@@ -297,7 +297,7 @@ console.log(a.indexOf('a'))
 // 1
 ```
 
-- **.lastIndexOf()**  - sozdeki simvolun son indexin tapmaq üçündür. məs: a.lastIndexOf(“s”)=2
+- **.lastIndexOf()**  - sözdəki simvolun son indexin tapmaq üçün istifadə olunur. Axtarış zamanı eyni simvol bir neçə dəfə keçsə belə son nəticəni göstərir
 
 ```js
 let a = "JavaScript"
@@ -305,7 +305,7 @@ console.log(a.lastIndexOf('a'))
 // 3
 ```
 
-- **.search()** - indexi tapır
+- **.search()** - sözdəki simvolun indexin tapmaq üçün istifadə olunur. Axtarış zamanı eyni simvol bir neçə dəfə keçsə belə ilk nəticəni göstərir
 
 ```js
 let a = "JavaScript"
@@ -313,121 +313,198 @@ console.log(a.search('v'))
 // 2
 ```
 
-- **.match()** - uzlaşmanı yoxlayır. a=front end veb, məs: a.match(/fro/g)
+- **.match()** - sözdə hər hansı uzlaşmanı yoxlamaq üçün istifadə olunur. Əgər axtarılan nəticə varsa, array formasında bizə geri cavab göndərir
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.match("t"));
+// (1) ["t"]
+console.log(a.match("a"));
+// (1) ["a"]
 ```
 
-- **.matchAll()** - 
+- **.startsWith(“string”)** - sözün axtarış sözü ilə başlayıb başlamadığını yoxlamaq üçün istifadə olunur. Əgər axtarılan string ilə başlayıbsa - true, başlamayıbsa false nəticəsi qaytarır.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.startsWith('j'))
+// false
+console.log(a.startsWith('J'))
+// true
 ```
 
-- **.startsWith(“string”)** - cümlə bu sözlə başlayırsa true və ya false qaytarır
+- **.endsWith()** - sözün axtarış sözü ilə bitib bitmədiyini yoxlamaq üçün istifadə olunur. Əgər axtarılan string ilə bitibsə - true, bitməyibsə false nəticəsi qaytarır.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.endsWith("t"));
+// true
+console.log(a.endsWith("tt"));
+// false
 ```
 
-- **.endsWith()**
+- **.includes()** - String içərisində hər hansı bir mövqedə axtarılan söz buraya daxildirsə - true, deyilsə false nəticəsi qaytarır
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.includes("Java"))
+// true
+console.log(a.includes("Javas"))
+// false
 ```
 
-- **.includes()** - true və ya false cavab qaytarır əgər axtarılan nəticə varsa. məs: a.includes(“ilkin”)
+- **.replace()** - string içərisindəki hər hansı bir string-i başqa bir string ilə əvəz etməyə kömək edir. Əvəzləmə sadəcə tapılan ilk nəticə üçün yerinə yetirilir.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.replace("a", "b"));
+// JbsaScript;
+let b = "Mən JavaScript dilindən istifadə edirəm. JavaScript frontend proqramlaşdırmada xüsusi yer tutur. JavaScriptlə ağlınıza gəlməyəcək şeyləridə etmək mümkündür";
+console.log(b.replace("JavaScript", "JS"));
+// Mən JS dilindən istifadə edirəm. JavaScript frontend proqramlaşdırmada xüsusi yer tutur. JavaScriptlə ağlınıza gəlməyəcək şeyləridə etmək mümkündür;
+let c = "jAvaScript";
+console.log(c.replace("a", "c"));
+// jAvcScript;
+let d = "Amerika Birləşmiş Ştatları";
+console.log(d.replace(' ', '-')); 
+// Amerika-Birləşmiş Ştatları
+let e = "Amerika Birləşmiş Ştatları";
+console.log(e.replace(/a/g, "B"));
+// AmerikB Birləşmiş ŞtBtlBrı
+let f = "Amerika Birləşmiş Ştatları";
+console.log(f.replace(/a/gi, "B"));
+// BmerikB Birləşmiş ŞtBtlBrı
 ```
 
-- **.replace()** - əvəz edir məs:a.replace(“replace”,”****/”) = ****/ və ya a.replace(/a/g, “*”) = repl*ce ---- ilk uzlaşanı tapır ---- /i - ilə insesntive, /g - global tapır
+- **.replaceAll()** - string içərisindəki hər hansı bir string-i başqa bir string ilə əvəz etməyə kömək edir. Əvəzləmə bütün tapılan nəticə üçün yerinə yetirilir.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.replaceAll("a", "b"));
+// JbsbScript;
+let b = "Mən JavaScript dilindən istifadə edirəm. JavaScript frontend proqramlaşdırmada xüsusi yer tutur. JavaScriptlə ağlınıza gəlməyəcək şeyləridə etmək mümkündür";
+console.log(b.replaceAll("JavaScript", "JS"));
+// Mən JS dilindən istifadə edirəm. JS frontend proqramlaşdırmada xüsusi yer tutur. JSlə ağlınıza gəlməyəcək şeyləridə etmək mümkündür;
+let c = "jAvaScript";
+console.log(c.replaceAll("a", "c"));
+// jAvcScript;
+let d = "Amerika Birləşmiş Ştatları";
+console.log(d.replaceAll(' ', '-')); 
+// Amerika-Birləşmiş-Ştatları
+let e = "Amerika Birləşmiş Ştatları";
+console.log(e.replaceAll(/a/g, "B"));
+// AmerikB Birləşmiş ŞtBtlBrı
+let f = "Amerika Birləşmiş Ştatları";
+console.log(f.replaceAll(/a/gi, "B"));
+// BmerikB Birləşmiş ŞtBtlBrı
 ```
 
-- **.replaceAll()** - bütün hamsn əvəz edir
+- **.toUpperCase()** - stringin bütün simvollarını böyük hərflərə çevirmək üçün istifadə olunur.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.toUpperCase());
+// JAVASCRIPT
+// 
 ```
 
-- **.toUpperCase()** -hamsın  böyüdür (məs: let element1 = element2.toUpperCase() )
+- **.toLowerCase()** - stringin bütün simvollarını kiçik hərflərə çevirmək üçün istifadə olunur.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.toLowerCase())
+// javascript
 ```
 
-- **.toLowerCase()** -hamsın kiçildir
+- **.concat()** - dəyişənlərin dəyərlərini bir biri ilə birləşdirmək üçün istifadə olunur.
 
 ```js
-let a = "JavaScript"
-console.log(a)
+let a = "JavaScript";
+let b = "Programming Language"
+console.log(a.concat(b));
+// JavaScript Programming Language
 ```
 
-- **.concat()** - birləşdirmək üçündür. məs:a.concat(“adf”)=concatadf
+- **.trim()** - Stringin əvvəli və sonunda buraxılmış boşluq simvollarını təmizləmək üçün istifadə olunur
 
 ```js
-let a = "JavaScript"
-console.log(a)
+let a = "    JavaScript     "
+console.log(a.trim());
+// JavaScript
 ```
 
-- **.trim()** - solda və sağdakı boşluqları silir
+- **.trimStart()** - Stringin əvvəlində buraxılmış boşluq simvollarını təmizləmək üçün istifadə olunur
 
 ```js
-let a = "JavaScript"
-console.log(a)
+let a = "      JavaScript"
+console.log(atrimStart());
+// JavaScript
 ```
 
-- **.trimStart()** başlanğıcdakı boşluqları silir
+- **.trimEnd()** -  Stringin sonunda buraxılmış boşluq simvollarını təmizləmək üçün istifadə olunur
 
 ```js
-let a = "JavaScript"
-console.log(a)
+let a = "JavaScript      "
+console.log(a.trimEnd());
+// JavaScript
 ```
 
-- **.trimEnd()** sondakı boşluqları silir
+- **.padStart(number,"string")** - stringin əvvəlinə string birləşdirmək üçün istifadə olunur. İlk dəyər stringin neçə simvolla dolması, ikinici dəyəri isə hansı simvolla dolması üçündür
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.padStart(15, "x"))
+// xxxxxJavaScript
 ```
 
-- **.padStart(4,"x")**  sözün əvvəlində 3 x atır
+- **.padEnd(number,"string")** - stringin sonuna string birləşdirmək üçün istifadə olunur. İlk dəyər stringin neçə simvolla dolması, ikinici dəyəri isə hansı simvolla dolması üçündür
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.padEnd(15, "x"))
+// JavaScriptxxxxx
 ```
 
-- **.padEnd()**
+- **.charAt()** - string daxilində index-ə əsasən simvolu tapa bilmək üçün istifadə olunur.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.charAt(0))
+// J
 ```
 
-- **.charAt()** - sözdəki simvolu qaytarır. məs: a.charAt(0)=c
+- **.charCodeAt()** - string içərisindən hər hansı bir indexin [[ACSII](https://www.asciitable.com/)] cədvəli üzrə ona uyğun olan UNICODE rəqəmini tapmaq üçün istifadə olunur
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.charCodeAt(0));
+// 74
+console.log(a.charCodeAt(1));
+// 97
+console.log(a.charCodeAt(2));
+// 118
+console.log(a.charCodeAt(3));
+// 97
+console.log(a.charCodeAt(4));
+// 83
+console.log(a.charCodeAt(5));
+// 99
+console.log(a.charCodeAt(6));
+// 114
+console.log(a.charCodeAt(7));
+// 105
+console.log(a.charCodeAt(8));
+// 112
+console.log(a.charCodeAt(9));
+// 116
 ```
 
-- **.charCodeAt()** - sözdəki simvolun ascii kodun qaytarır
+- **at()** - metodu stringin indeksinə əsasən simvolu qaytarır.
 
 ```js
 let a = "JavaScript"
-console.log(a)
+console.log(a.at(0))
+// J
+console.log(a.at(-1))
+// t
 ```
