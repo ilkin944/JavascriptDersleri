@@ -47,6 +47,7 @@ console.log(Array.isArray(front));
 ```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 console.log(front.toString());
+// HTML,CSS,SCSS,Bootstrap,Tailwind,Git,JavaScript
 ```
 
 - **array.join(“string”)** - arrayin elementlərini istənilən simvol ilə ayırmaq üçün istifadə olunur
@@ -54,6 +55,7 @@ console.log(front.toString());
 ```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 console.log(front.join(" * "));
+// HTML * CSS * SCSS * Bootstrap * Tailwind * Git * JavaScript
 ```
 
 - **array.pop()** - array-in son elementini silmək üçün istifadə olunur.
