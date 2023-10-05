@@ -354,6 +354,8 @@ Yuxarıdakı nümunədən oxuya bilərsiniz:
 ### DOM
 
 HTML elementlərinin tapılması
+
+```js
 // id ilə elementin tapılması
 + document.getElementById(id)
 // teq adı ilə elementin tapılması
@@ -363,11 +365,13 @@ HTML elementlərinin tapılması
 
 + document.querySelector()
 + document.querySelectorAll()
+```
 
 
 HTML elementlərinin dəyişdirilməsi
-+ element.innerHTML =  html kontent
 
+```js
++ element.innerHTML = html kontent
 + element.style.property = value
 + element.setAttribute(attribute, value)
 
@@ -377,6 +381,7 @@ Elementlərin əlavə edilməsi və silinməsi
 + document.removeChild(element)
 + document.replaceChild(new, old)
 + document.write(text)
+```
 
 ```js
 // Yeni div və paraqraf teqləri yaradırıq
@@ -412,6 +417,8 @@ element.classList.toggle("classadi");
 ```
 
 HTML obyektlərinin tapılması
+
+```js
 + document.anchors
 + document.body
 + document.cookie
@@ -422,6 +429,7 @@ HTML obyektlərinin tapılması
 + document.head
 + document.images
 + document.title
+```
 
 ### Events
 
