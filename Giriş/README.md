@@ -1,7 +1,7 @@
 
 # Javascript Dərs 1
 
-### Javascriptdə data tiplər
+## Javascriptdə data tiplər
 
 - Numbers - Rəqəmlər məs:(5, 10, 3.22, -10.4356436)
 - Strings - Sözlər məs:("soz", 'soz')

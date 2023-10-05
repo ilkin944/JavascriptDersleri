@@ -1,123 +1,186 @@
-# JavaScript 3cü dərs
-### Template literallar - `${}`
+# JavaScript 3-cü dərs
 
-```
+## Template literallar - `${}`
+
+```js
 let name = "RG";
 let name2 = "Academy";
-
 let text = `${name}, ${name2} -ə xoş gəlmisiniz!`;
+console.log(text)
 ```
+
 ### Arraylar
-array.length - arrayin uzunluğunu tapmaq üçün istifadə edilir
-```
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-let uzunluq = front.length;
 
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-let element = front[0]; // HTML
+- **.length** - arrayin uzunluğunu tapmaq üçün istifadə edilir
 
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-let element = front[front.length - 1]; // Arrayin sonuncu elementi olan Javascript qayıdır: front[6]
+```js
+const front1 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+let uzunluq = front1.length;
+console.log(uzunluq);
+// console: 7
+const front2 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+let element1 = front2[0]; 
+console.log(element1);
+// HTML
 
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front[front.length] = "React"; // Arrayın sonuna yeni element mənimsətmək
+const front3 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+let element2 = front3[front3.length - 1]; 
+console.log(element2);
+// Arrayin sonuncu elementi olan Javascript qayıdır: front[6]
+
+const front4 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+front4[front4.length] = "React"; 
+console.log(front4);
+// Arrayın sonuna yeni element mənimsətmək
 ```
-Arrayın həqiqətəndə array olub olmadığını yoxlamaq üçündür
-Array.isArray(arrayinAdi)  - true/false
-```
+
+- **Array.isArray(arrayinAdi)**  - Arrayın həqiqətəndə array olub olmadığını yoxlamaq üçündür.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 console.log(Array.isArray(front));
+// true
 ```
 
-array.toString() - arrayin elementlərini vergüllə ayırır (strinqə çevirir)
-```
+- **array.toString()** - arrayin elementlərini vergüllə ayrılmış strinqə çevirir
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-document.getElementById("demo").innerHTML = front.toString();
+console.log(front.toString());
 ```
 
-array.join(“*”) - arrayin elementlərini * ilə ayırır
-```
+- **array.join(“string”)** - arrayin elementlərini istənilən simvol ilə ayırmaq üçün istifadə olunur
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-document.getElementById("demo").innerHTML = front.join(" * ");
+console.log(front.join(" * "));
 ```
 
-array.pop() - arrayın son elementini çıxarır
-```
+- **array.pop()** - array-in son elementini silmək üçün istifadə olunur.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 let silinen = front.pop();
 console.log(silinen)
+// JavaScript
+console.log(front)
+// ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git"];
 ```
 
-array.push(“element”) - arrayin sonuna element əlavə edir
-```
+- **array.push(“element”)** - array-in sonuna yeni element əlavə etmək üçün istifadə olunur.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-let elave edilen = front.push("React");
+let elaveEdilen = front.push("React");
+console.log(elaveEdilen)
+// 8 - yeni array-in uzunluğu
+console.log(front)
+// ['HTML', 'CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'JavaScript', 'React']
 ```
 
-array.shift() - Arrayın ilk elementini silir
-```
+- **array.shift()** - array-in ilk elementini silmək üçün istifadə olunur.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 let silinen = front.shift();
+console.log(front);
+// ['CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'JavaScript']
+console.log(silinen);
+// HTML
 ```
 
-array.unshift(“element”) - arrayın əvvəlinə element əlavə edir
-```
+- **array.unshift()** - array-in əvvəlinə yeni element əlavə etmək üçün istifadə olunur.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front.unshift("DNS");
+const yenisi = front.unshift("DNS");
+console.log(yenisi);
+// 8 - yeni array-in uzunluğu
+console.log(front);
+// ['DNS', 'HTML', 'CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'JavaScript']
 ```
 
-array1.concat(array2) - array1 ilə array 2 ni birləşdirir.
-```
+- **array1.concat(array2)** - array-i başqa bir array ilə birləşdirmək üçün istifadə olunur.
+
+```js
 const front = ["HTML", "CSS"];
 const front2 = ["JS", "React", "Next"];
-
 const frontEnd = front.concat(front2);
+console.log(frontEnd)
+// ["HTML", "CSS", "JS", "React", "Next"]
 ```
 
+- **array.splice(başlama indexi, neçə element siləcəyi, “əlavə edəcəyi”)** - array-ə hər hansı indeks aralığındakı elementləri silməyə və eyni zamanda silinən indeks yerinə başqa bir element əlavə etmək üçün istifadə olunur
 
-array.splice(başlama indexi, neçə element siləcəyi, “əlavə edəcəyi”)
+```js
+const front1 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+front1.splice(6, 0, "React", "Next");
+console.log(front1);
+// ['HTML', 'CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'React', 'Next', 'JavaScript']
+
+const front2 = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
+front2.splice(0, 1);
+console.log(front2);
+// ['CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'JavaScript']
 ```
+
+- **array.slice(başlama indexi, neçə element siləcəyi)** - array-dən verilən indekslər əsasında silməyə kömək edir
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front.splice(6, 0, "React", "Next");
+const silinen = front.slice(0, 1);
+console.log(silinen);
+// ['HTML']
+console.log(front);
+// ['HTML', 'CSS', 'SCSS', 'Bootstrap', 'Tailwind', 'Git', 'JavaScript']
+```
 
+- **array.sort()** - array-in elementlərinin əlifba sırası ilə A-dan Z-ə düzməyə imkan verir. .sort() metodu yalnız stringləri əlifba sırası ilə düzərkən doğru nəticə əldə etməyə kömək edir. Rəqəmlərdən ibarət array-i azdan-çoxa düzmək istədikdə isə sort() metodunun daxilində müqayisə funksiyası işə salınmalıdır. Funksiya elementlərin sırasını təyin etmək üçün istifadə olunur. Birinci arqument ikinci arqumentdən azdırsa mənfi dəyər, bərabərdirsə sıfır, əks halda müsbət dəyər qaytarması gözlənilir. Yazılmadıqda, elementlər artan, ASCII simvol sırası ilə sıralanır.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front.splice(0, 1);
+const az = front.sort();
+console.log(az)
+// ['Bootstrap', 'CSS', 'Git', 'HTML', 'JavaScript', 'SCSS', 'Tailwind']
+
+const reqemler1 = [40, 100, 1, 5, 25, 10];
+const artanSira = reqemler1.sort(function(a, b){
+  return a - b
+  }
+);
+// 40-100=-60 (40 kiçikdir)
+// 40-1=39 (1 kiçikdir)
+// 40-5=35 (5 kiçikdir)
+// 40-25=15 (25 kiçikdir)
+// 40-10=30 (10 kiçikdir)
+// Bu hesabla hər bir rəqəm digəri ilə müqayisə olunana qədər davam etmiş olacaq və sonda dügün nəticəni əldə etmiş olacağıq
+
+
+console.log(artanSira)
+// [1, 5, 10, 25, 40, 100]
+
+const reqemler2 = [40, 100, 1, 5, 25, 10];
+const azalanSira = reqemler2.sort(function(a, b){
+  return b - a
+  }
+);
+console.log(azalanSira)
+// [100, 40, 25, 10, 5, 1]
 ```
 
-array.slice(başlama indexi, neçə element siləcəyi)
-```
+- **array.reverse()** array-in elementlərinin tərs sırası ilə düzməyə imkan verir. Əlifba sırasına uyğun düzə bilmək üçün ilk növbədə, array-i A-Z düzülüşünə gətirməli, sonra isə .reverse() metodu vasitəsi ilə Z-A düzə bilərik.
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-const silinen = front.slice(1);
+const az = front.sort();
+const za = front.reverse();
+console.log(za)
+// ['Tailwind', 'SCSS', 'JavaScript', 'HTML', 'Git', 'CSS', 'Bootstrap']
 ```
 
+- **Math.max.apply(null, array);** arrayın ən böyük ədədini
 
-array.sort() A-Z
-```
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front.sort();
-
-
-const reqemler = [40, 100, 1, 5, 25, 10];
-reqemler.sort(function(a, b){return a - b});
-
-const reqemler = [40, 100, 1, 5, 25, 10];
-reqemler.sort(function(a, b){return b - a});
-```
-
-array.reverse() Z-A
-```
-const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
-front.sort();
-front.reverse();
-```
-
-
-array.sort(function(a, b){return a - b}) əgər a-b mənfidirsə a, müsbətdirsə b sıralanır
-
-
-
-Math.max.apply(null, array); arrayın ən böyük ədədini
-```
+```js
 <p>Array içəsirindəki ən böyük ədəd: <span id="demo"></span>.</p>
 
 <script>
@@ -131,7 +194,8 @@ function arrayinBoyukElementi(arqument) {
 ```
 
 Math.min.apply(null, array); arrayın ən kiçik ədədini qaytarır
-```
+
+```js
 <p>Array içəsirindəki ən kiçik ədəd: <span id="demo"></span>.</p>
 
 <script>
@@ -146,7 +210,8 @@ function arrayinKicikElementi(arqument) {
 
 array.forEach(funksiya) forEach arrayın elementləri üzərində dövr edə bilmək üçündür. Funksiya isə 3 arqument alır. funksiya(deyer, 
 index, arrayin ozu)
-```
+
+```js
 const reqemler = [45, 4, 9, 16, 25];
 let txt = "";
 reqemler.forEach(funksiyam);
@@ -157,7 +222,8 @@ function funksiyam(value, index, array) {
 ```
 
 array.map(funksiya) - arrayın özündən yeni bir array yaradaraq üzərində dövr edib nəticə qaytarır.Funksiya isə 3 arqument alır. funksiya(deyer, index, arrayin ozu)
-```
+
+```js
 const reqemler1 = [45, 4, 9, 16, 25];
 const reqemler2 = reqemler1.map(funksiyam);
 
@@ -167,7 +233,8 @@ function funksiyam(value, index, array) {
 ```
 
 array.filter(funksiya) - arrayı filtr edib uyğun nəticəni qaytarır. məsələn const reqemler = [45, 4, 9, 16, 25];const over18 = reqemler.filter(funksiyam);function funksiyam(value, index, array) { return value > 18;}
-```
+
+```js
 const reqemler = [45, 4, 9, 16, 25];
 const over18 = reqemler.filter(funksiyam);
 
@@ -179,7 +246,8 @@ function funksiyam(value, index, array) {
 
 
 array.reduce(funksiya) tək bir dəyər yaratmaq (azaltmaq) üçün hər bir massiv elementində funksiya işlədir. reduce()massivdə soldan sağa işləyir. funksiya 4 arqument alır(umumi, value, index, array). Həmçinin reduceRight() metoduda eyni işi görür ancaq sağdan sola
-```
+
+```js
 const reqemler = [45, 4, 9, 16, 25];
 let sum = reqemler.reduce(funksiyam);
 
@@ -191,7 +259,8 @@ function funksiyam(total, value, index, array) {
 
 
 array.every(funksiya) arrayın bütün elementlərinin şərti ödəməsini yoxlayır
-```
+
+```js
 const reqemler = [45, 4, 9, 16, 25];
 
 document.getElementById("demo").innerHTML = reqemler.every(funksiyam);
@@ -202,7 +271,8 @@ function funksiyam(value, index, array) {
 ```
 
 array.some() arrayın bəzi elementlərinin şərti ödəməsini yoxlayır
-```
+
+```js
 const reqemler = [45, 4, 9, 16, 25];
 
 document.getElementById("demo").innerHTML = reqemler.some(funksiyam); 
@@ -213,7 +283,8 @@ function funksiyam(value, index, array) {
 ```
 
 array.indexOf("soz") 
-```
+
+```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 let movqe = front.indexOf("Bootstrap") + 1;
 document.getElementById("demo").innerHTML = movqe
@@ -223,7 +294,7 @@ array.find() metodu test funksiyasını keçən birinci array elementinin dəyə
 
 Bu nümunə 18-dən böyük olan ilk elementi tapır (qiymətini qaytarır):
 
-```
+```js
 const reqemler = [4, 9, 16, 25, 29];
 
 demo.innerHTML = reqemler.find(funksiyam);
@@ -237,7 +308,7 @@ findIndex() metodu test funksiyasını keçən birinci array elementinin indeksi
 
 Bu nümunə 18-dən böyük olan birinci elementin indeksini tapır:
 
-```
+```js
 const reqemler = [4, 9, 16, 25, 29];
 
 document.getElementById("demo").innerHTML = reqemler.findIndex(funksiyam);
