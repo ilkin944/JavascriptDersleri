@@ -180,61 +180,62 @@ console.log(za)
 // ['Tailwind', 'SCSS', 'JavaScript', 'HTML', 'Git', 'CSS', 'Bootstrap']
 ```
 
-- **Math.max.apply(null, array);** arrayın ən böyük ədədini
+- **Math.max.apply(null, array);** arrayın ən böyük ədədini tapmaq üçün istifadə olunur
 
 ```js
-<p>Array içəsirindəki ən böyük ədəd: <span id="demo"></span>.</p>
-
-<script>
 const reqemler = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = arrayinBoyukElementi(reqemler);
-
-function arrayinBoyukElementi(arqument) {
-  return Math.max.apply(null, arqument);
-}
-</script>
+const enBoyuk = Math.max.apply(null, reqemler);
+// 100
 ```
 
-Math.min.apply(null, array); arrayın ən kiçik ədədini qaytarır
+- **Math.min.apply(null, array);** arrayın ən kiçik ədədini tapmaq üçün istifadə olunur
 
 ```js
-<p>Array içəsirindəki ən kiçik ədəd: <span id="demo"></span>.</p>
-
-<script>
 const reqemler = [40, 100, 1, 5, 25, 10];
-document.getElementById("demo").innerHTML = arrayinKicikElementi(reqemler);
-
-function arrayinKicikElementi(arqument) {
-  return Math.max.apply(null, arqument);
-}
-</script>
+const enBoyuk = Math.min.apply(null, reqemler);
+// 1
 ```
 
-array.forEach(funksiya) forEach arrayın elementləri üzərində dövr edə bilmək üçündür. Funksiya isə 3 arqument alır. funksiya(deyer, 
-index, arrayin ozu)
+- **array.forEach(funksiya)** forEach arrayın elementləri üzərində dövr edə bilmək üçündür. Funksiya isə 3 arqument alır. funksiya(elementinOzu, elementinIndeksi, arrayinOzu)
 
 ```js
 const reqemler = [45, 4, 9, 16, 25];
-let txt = "";
 reqemler.forEach(funksiyam);
-
 function funksiyam(value, index, array) {
-  txt += value + "<br>";
+  console.log(value)
+  // 45
+  // 4
+  // 9
+  // 16
+  // 25
+  console.log(index)
+  // 0
+  // 1
+  // 2
+  // 3
+  // 4
+  console.log(array)
+  // [45, 4, 9, 16, 25]
+  // [45, 4, 9, 16, 25]
+  // [45, 4, 9, 16, 25]
+  // [45, 4, 9, 16, 25]
+  // [45, 4, 9, 16, 25]
 }
 ```
 
-array.map(funksiya) - arrayın özündən yeni bir array yaradaraq üzərində dövr edib nəticə qaytarır.Funksiya isə 3 arqument alır. funksiya(deyer, index, arrayin ozu)
+- **array.map(funksiya)** - arrayın özündən yeni bir array yaradaraq üzərində dövr edib nəticə qaytarır.Funksiya isə 3 arqument alır: dəyər, index, arrayin özü
 
 ```js
 const reqemler1 = [45, 4, 9, 16, 25];
 const reqemler2 = reqemler1.map(funksiyam);
-
 function funksiyam(value, index, array) {
   return value * 2;
 }
+console.log(reqemler2)
+// [90 , 8 , 18 , 32 , 50]
 ```
 
-array.filter(funksiya) - arrayı filtr edib uyğun nəticəni qaytarır. məsələn const reqemler = [45, 4, 9, 16, 25];const over18 = reqemler.filter(funksiyam);function funksiyam(value, index, array) { return value > 18;}
+- **array.filter(funksiya)** - arrayı filtr edib uyğun nəticəni qaytarır.
 
 ```js
 const reqemler = [45, 4, 9, 16, 25];
@@ -243,11 +244,11 @@ const over18 = reqemler.filter(funksiyam);
 function funksiyam(value, index, array) {
   return value > 18;
 }
+console.log(over18)
+// [25,45]
 ```
 
-
-
-array.reduce(funksiya) tək bir dəyər yaratmaq (azaltmaq) üçün hər bir massiv elementində funksiya işlədir. reduce()massivdə soldan sağa işləyir. funksiya 4 arqument alır(umumi, value, index, array). Həmçinin reduceRight() metoduda eyni işi görür ancaq sağdan sola
+- **array.reduce(funksiya)** tək bir dəyər yaratmaq (azaltmaq) üçün hər bir massiv elementində funksiya işlədir. reduce()massivdə soldan sağa işləyir. funksiya 4 arqument alır(umumi, value, index, array). Həmçinin reduceRight() metoduda eyni işi görür ancaq sağdan sola
 
 ```js
 const reqemler = [45, 4, 9, 16, 25];
@@ -256,79 +257,84 @@ let sum = reqemler.reduce(funksiyam);
 function funksiyam(total, value, index, array) {
   return total + value;
 }
+console.log(sum)
+// 94
 ```
 
-
-
-array.every(funksiya) arrayın bütün elementlərinin şərti ödəməsini yoxlayır
+- **array.every(funksiya)** arrayın bütün elementlərinin şərti ödəməsini yoxlayır
 
 ```js
 const reqemler = [45, 4, 9, 16, 25];
 
-document.getElementById("demo").innerHTML = reqemler.every(funksiyam);
+const herBiri = reqemler.every(funksiyam);
 
 function funksiyam(value, index, array) {
   return value > 18;
 }
+console.log(herBiri)
+// false - hər bir element 18-dən böyük deyil
 ```
 
-array.some() arrayın bəzi elementlərinin şərti ödəməsini yoxlayır
+- **array.some()** arrayın bəzi elementlərinin şərti ödəməsini yoxlayır
 
 ```js
 const reqemler = [45, 4, 9, 16, 25];
 
-document.getElementById("demo").innerHTML = reqemler.some(funksiyam); 
+const bezileri = reqemler.some(funksiyam); 
 
 function funksiyam(value, index, array) {
   return value > 18;
 }
+console.log(bezileri)
+// true - arrayın bəzi elementləri 18-dən böyükdür
 ```
 
-array.indexOf("soz") 
+- **array.indexOf("soz")**
 
 ```js
 const front = ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind", "Git", "JavaScript"];
 let movqe = front.indexOf("Bootstrap") + 1;
-document.getElementById("demo").innerHTML = movqe
+console.log(movqe)
+// 4 - Bootstrap sözü array içərisində 4-cü, index olaraq 3-cü elementdir
 ```
 
-array.find() metodu test funksiyasını keçən birinci array elementinin dəyərini qaytarır.
-
-Bu nümunə 18-dən böyük olan ilk elementi tapır (qiymətini qaytarır):
+- **array.find()** metodu test funksiyasını keçən birinci array elementinin dəyərini qaytarır.
 
 ```js
 const reqemler = [4, 9, 16, 25, 29];
 
-demo.innerHTML = reqemler.find(funksiyam);
+const tapilan = reqemler.find(funksiyam);
 
 function funksiyam(value, index, array) {
   return value > 18;
 }
+console.log(tapilan)
+// 25
 ```
 
-findIndex() metodu test funksiyasını keçən birinci array elementinin indeksini qaytarır.
-
-Bu nümunə 18-dən böyük olan birinci elementin indeksini tapır:
+- **findIndex()** metodu test funksiyasını keçən birinci array elementinin indeksini qaytarır.
 
 ```js
 const reqemler = [4, 9, 16, 25, 29];
 
-document.getElementById("demo").innerHTML = reqemler.findIndex(funksiyam);
+const tapilaninSirasi = reqemler.findIndex(funksiyam);
 
 function funksiyam(value, index, array) {
   return value > 18;
 }
+console.log(tapilaninSirasi)
+// 3
 ```
-
-
 
 ### Dövrlər
-For dövrü
+
+**For dövrü**
 for dövrü 3 parametr ilə dövr yaradır:
 for (baslangic deyer 1; dovr muddeti 2; dovrun istiqameti) {
   // kod blokunun nə icra edəcəyi
 }
-```
+
+```js
 // 1. i adında element yaradıb onun başlanğıc dəyəri kimi 0 ötürürük.
 // 2. i ədədinin 5 dən kiçik olmasını bildirik
 // 3. i elementinin bir vahid artmasını tələb edirik
@@ -338,14 +344,15 @@ for (let i = 0; i < 5; i++) {
 }
 document.getElementById("demo").innerHTML = reqem;
 ```
-Yuxarıdakı nümunədən oxuya bilərsiniz:
 
+Yuxarıdakı nümunədən oxuya bilərsiniz:
 İfadə 1 döngə başlamazdan əvvəl dəyişəni təyin edir (i = 0 olsun).
 İfadə 2 döngənin işləməsi üçün şərti müəyyən edir (i 5-dən az olmalıdır).
 İfadə 3 hər dəfə loopda kod bloku icra edildikdə dəyəri (i++) artırır.
 
 
 ### DOM
+
 HTML elementlərinin tapılması
 // id ilə elementin tapılması
 + document.getElementById(id)
@@ -370,7 +377,8 @@ Elementlərin əlavə edilməsi və silinməsi
 + document.removeChild(element)
 + document.replaceChild(new, old)
 + document.write(text)
-```
+
+```js
 // Yeni div və paraqraf teqləri yaradırıq
 let div = document.createElement("div");
 let paragraf = document.createElement("p");
@@ -391,8 +399,10 @@ div.removeChild(paragraf2)
 // Paraqrafı Paraqraf3 ilə əvəz edirik
 div.replaceChild(paragraf3, paragraf)
 ```
+
 Elementlərin classlarına əlavə etmə və silmə işləri üçün:
-```
+
+```js
 // Əlavə edir
 element.classList.add("classadi");
 // klası silir
@@ -414,7 +424,8 @@ HTML obyektlərinin tapılması
 + document.title
 
 ### Events
-```
+
+```html
 <select onchange="changeEventi(this)>
   <option value="html">HMTL</option>
   <option value="css">CSS</option>
@@ -429,7 +440,7 @@ function changeEventi(arqument){
 </script>
 ```
 
-```
+```html
 <style>
 div{
   width: 100%;
@@ -449,7 +460,8 @@ function mausUzaqlasdiqda(arqument) {
 }
 </script>
 ```
-```
+
+```html
 <div onmousedown="mausunDusmesi(this)" onmouseup="mausunQalxmasi(this)">Klik et</div>
 
 <script>
@@ -467,8 +479,10 @@ function mausunQalxmasi(arqument) {
 
 
 ### Event listenerlər
+
 Event dinləyicilərinin əsas məqsədi html elementlərinizə hər hansı eventi yazmadan birbaşa JavaScript daxilində elementə event tanətdırıb üzərində iş görə bilməyiniz üçündür. Event Listenerlər mötərizə daxilində 2 əsas parametr daxil etməyinizi tələb edir. 1-ci parametr eventin nə olması, 2ci isə funksiyanın özü
-```
+
+```html
 <button id="btn">kliklə</button>
 
 <script>
@@ -481,8 +495,10 @@ Event dinləyicilərinin əsas məqsədi html elementlərinizə hər hansı even
 </script>
 ```
 
-```
+```html
   <button id="btn">kliklə</button>
+
+  <script>
   document.querySelector("#btn").addEventListener("click", funksiyaAdi)
 
   function funksiyaAdi(){
