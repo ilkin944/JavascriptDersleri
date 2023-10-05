@@ -426,7 +426,7 @@ HTML obyektlərinin tapılması
 ### Events
 
 ```html
-<select onchange="changeEventi(this)>
+<select onchange="changeEventi(this)">
   <option value="html">HMTL</option>
   <option value="css">CSS</option>
   <option value="tailwind">TW</option>
