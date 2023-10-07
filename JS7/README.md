@@ -3,6 +3,7 @@ Javascriptdə hərşey obyektlərdən referans aldığını bilirik. Məsələn 
 
 Obyektlərin property-ləri istənilən tipdə məlumatı özündə saxlaya bilər. Bura həmçinin funksiyalarımızda daxildir. Məsələn
 ```js 
+
 const user = {
     ad: "Ilkin",
     soyad: "Zulfi",
@@ -24,13 +25,16 @@ Həmçinin obyektin propertylərini delete açar sözü vasitəsi ilə də silə
 delete user.country;
 ```
 
-
 Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üsullar mövcuddur. Bunlardan bəziləri aşağıdakılardır: 
-- obyektin propertylərinin adlarına görə, 
+
+- obyektin propertylərinin adlarına görə,
+
     ```js
     console.log(user.ad)
     ```
-- dövrlərlə, 
+
+- dövrlərlə,
+
     ```js
       const user = {
           ad: "Ilkin",
@@ -44,6 +48,7 @@ Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üs
       }
       demo.innerHTML = txt;
     ```
+    
 - Object.values()  - obyekti massivə çevirir
   ```js
     const myArr = Object.values(user);

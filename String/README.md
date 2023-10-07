@@ -1,6 +1,35 @@
-# JavaScriptdə tiplər üzərində metodlar
+# String
 
-## String-lər üzərində əməllər
+Stringlər digər proqramlaşdırma dillərində olduğu kimi JavaScriptdə də mövcud olan bir tipdir. Bu tip bizə hər hansı sözləri yazmaqda kömək edir. Stringlər **""** və ya **''** ilə yazılır. 
+
+```js
+let a = "Salam";
+let b = 'Azərbaycan!'
+```
+
+Javascriptdə stringləri ayrı ayrı dəyişkənlərə mənimsətməklə yarada və üzərində işlər görə bilərik. JavaScriptdə stringlər üzərində görülə biləcək və yadda saxlanılmalı olan ilk məqam, stringləri birləşdirmək üçün onları toplamaq kifayətdir. JavaScript stringləri toplayarkən onları bir-biri ilə birləşdirir.
+
+```js
+let a = "Salam";
+let b = 'Azərbaycan!'
+let c = a + b;
+console.log(c);
+// SalamAzərbaycan!;
+
+let d = a + " " + b;
+console.log(d);
+// Salam Azərbaycan!;
+```
+
+Həmçinin JavaScriptdə stringləri birləşdirmək üçün digər üsul Template Literallar adlanır. Bu üsul vasitəsi ilə öncəki stringləri birləşdirmək üçün toplamaq əvəzində **``** işarələri daxilində hər bir simvol string olaraq sayılır. İçərisində hər hansı bir dinamik JavaScript kodu yazmaq istədikdə isə **${}** istifadə etmək lazımdır.
+
+```js
+let a = "Salam";
+let b = 'Azərbaycan!'
+let c = `${a}. Mən ${b}lıyam`
+console.log(c)
+// Salam. Mən Azərbaycanlıyam
+```
 
 - **.length** - string-in uzunluğunu hesablamaq üçün istifadə olunur
 

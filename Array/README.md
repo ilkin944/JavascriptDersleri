@@ -1,15 +1,4 @@
-# JavaScript 3-cü dərs
-
-## Template literallar - `${}`
-
-```js
-let name = "RG";
-let name2 = "Academy";
-let text = `${name}, ${name2} -ə xoş gəlmisiniz!`;
-console.log(text)
-```
-
-### Arraylar
+# Arraylar
 
 - **.length** - arrayin uzunluğunu tapmaq üçün istifadə edilir
 
@@ -325,27 +314,3 @@ function funksiyam(value, index, array) {
 console.log(tapilaninSirasi)
 // 3
 ```
-
-### Dövrlər
-
-**For dövrü**
-for dövrü 3 parametr ilə dövr yaradır:
-for (baslangic deyer 1; dovr muddeti 2; dovrun istiqameti) {
-  // kod blokunun nə icra edəcəyi
-}
-
-```js
-// 1. i adında element yaradıb onun başlanğıc dəyəri kimi 0 ötürürük.
-// 2. i ədədinin 5 dən kiçik olmasını bildirik
-// 3. i elementinin bir vahid artmasını tələb edirik
-let reqem = "";
-for (let i = 0; i < 5; i++) {
-  reqem += "Rəqəm: " + i + "<br>";
-}
-document.getElementById("demo").innerHTML = reqem;
-```
-
-Yuxarıdakı nümunədən oxuya bilərsiniz:
-İfadə 1 döngə başlamazdan əvvəl dəyişəni təyin edir (i = 0 olsun).
-İfadə 2 döngənin işləməsi üçün şərti müəyyən edir (i 5-dən az olmalıdır).
-İfadə 3 hər dəfə loopda kod bloku icra edildikdə dəyəri (i++) artırır.
