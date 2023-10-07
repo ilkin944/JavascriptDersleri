@@ -22,7 +22,6 @@ HTML DOM, HTML üçün standart obyekt modeli və proqramlaşdırma interfeysidi
 
 Başqa sözlə: HTML DOM, HTML elementlərini necə əldə etmək, dəyişdirmək, əlavə etmək və ya silmək üçün standartdır.
 
-
 HTML Elementlərini tapa bilmək üçün aşağıdakı nümunələrə baxmaq lazımdır.
 
 ```html
@@ -116,28 +115,7 @@ Yuxarıdakı nümunələrə baxdıqda hər iksidə bizə lazım olan nəticəni 
 
 NodeList və HTMLCollection demək olarki eyni şeydir. Hər ikisi sənəddən axtarılan elementlərdən ibarət massiv kimi kolleksiyalarıdır. Düyünlərə indeks nömrələri ilə daxil olmaq olar. İndeks 0-dan başlayır.
 
-Hər ikisi siyahıda (kolleksiyada) elementlərin sayını qaytaran uzunluq xüsusiyyətinə malikdir.
-
-HTMLCollection sənəd elementlərinin toplusudur.
-
-NodeList sənəd qovşaqlarının (element qovşaqları, atribut qovşaqları və mətn qovşaqları) toplusudur.
-
-HTMLCollection elementlərinə onların adı, id və ya indeks nömrəsi ilə daxil olmaq olar.
-
-NodeList elementlərinə yalnız onların indeks nömrəsi ilə daxil olmaq olar.
-
-HTMLCollection həmişə canlı kolleksiyadır. Misal: DOM-dakı siyahıya <li> elementi əlavə etsəniz, HTMLCollection-dakı siyahı da dəyişəcək.
-
-NodeList çox vaxt statik kolleksiyadır. Misal: DOM-dakı siyahıya <li> elementi əlavə etsəniz, NodeList-dəki siyahı dəyişməyəcək.
-
-getElementsByClassName() və getElementsByTagName() metodları canlı HTMLCollection qaytarır.
-
-querySelectorAll() metodu statik NodeList-i qaytarır.
-
-childNodes xüsusiyyəti canlı NodeList-i qaytarır.
-
-
-
+Hər ikisi siyahıda (kolleksiyada) elementlərin sayını qaytaran uzunluq xüsusiyyətinə malikdir. HTMLCollection sənəd elementlərinin toplusudur. NodeList sənəd qovşaqlarının (element qovşaqları, atribut qovşaqları və mətn qovşaqları) toplusudur. HTMLCollection elementlərinə onların adı, id və ya indeks nömrəsi ilə daxil olmaq olar. NodeList elementlərinə yalnız onların indeks nömrəsi ilə daxil olmaq olar. HTMLCollection həmişə canlı kolleksiyadır. Misal: DOM-dakı siyahıya li elementi əlavə etsəniz, HTMLCollection-dakı siyahı da dəyişəcək. NodeList çox vaxt statik kolleksiyadır. Misal: DOM-dakı siyahıya li elementi əlavə etsəniz, NodeList-dəki siyahı dəyişməyəcək. getElementsByClassName() və getElementsByTagName() metodları canlı HTMLCollection qaytarır. querySelectorAll() metodu statik NodeList-i qaytarır. childNodes xüsusiyyəti canlı NodeList-i qaytarır.
 
 HTML elementlərinin dəyişdirilməsi
 
@@ -201,4 +179,3 @@ HTML obyektlərinin tapılması
 + document.images
 + document.title
 ```
-
