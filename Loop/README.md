@@ -1,6 +1,6 @@
 # Dövrlər
 
-Dövr hər hansı bir kodumuzun davamlı olaraq eyni işi görə bilməsi üçün istifadə etdiyimiz metodlardır. Məsələn biz ekranda 1-dən 100-ə qədər rəqəmlərin davamlı olaraq yazılmasını istəyirik. Bu ardıcıllıq eyni işi fərqli rəqəmlər üzərindən gördüyünə görə burada dövrlərdən istifadə oluna bilər. JavaScriptdə dövrlərin 4 əsas növü vardır. 
+Dövr hər hansı bir kodumuzun davamlı olaraq eyni işi görə bilməsi üçün istifadə etdiyimiz metodlardır. Məsələn biz ekranda 1-dən 100-ə qədər rəqəmlərin davamlı olaraq yazılmasını istəyirik. Bu ardıcıllıq eyni işi fərqli rəqəmlər üzərindən gördüyünə görə burada dövrlərdən istifadə oluna bilər. JavaScriptdə dövrlərin 4 əsas növü vardır.
 
 - **For dövrü** - for dövrü, dövrün başlanğıcının və sonunun bildirildiyi, eyni zamanda dövrün necə işləməsinin birlikdə təyin olunduğu dövrdür.
 
@@ -62,7 +62,7 @@ console.log(metn)
 
 Yuxarıdakı nümunəni belə şərh edə bilərik: for-in dövrü *insan* adlı obyektin dəyərlərini ala bilmək üçün x adlı dəyişkən, onun hər bir key-i üzərindən dövr edir və hər dövrdə ona uyğun olan dəyəri alır.
 
-for-in dövrü eyni zamanda *array*lar üzərində də dövr edərək dəyərləri almaq üçün istifadə edə bilərik. Arrayın içərisində biz hər hansı key bildirməsək belə, hər elementin indeksi əslində onun key-i sayılır. 
+for-in dövrü eyni zamanda *array*lar üzərində də dövr edərək dəyərləri almaq üçün istifadə edə bilərik. Arrayın içərisində biz hər hansı key bildirməsək belə, hər elementin indeksi əslində onun key-i sayılır.
 
 ```js
 const reqem = [4, 8, 12, 16, 20];
@@ -166,4 +166,4 @@ for (let i = 0; i < 10; i++) {
 // 2
 ```
 
-Yuxarıdakı nümunədə gördüyümüz kimi, hər hansı bir dövr içərisində yoxlanmasını istədiyiniz şərt daxilində break işlətdikdə artıq dövrü sonlandırmış olursunuz.
+Yuxarıdakı nümunədə gördüyümüz kimi, hər hansı bir dövr içərisində yoxlanmasını istədiyiniz şərt daxilində break işlətdikdə artıq dövrü sonlandırmış olursunuz

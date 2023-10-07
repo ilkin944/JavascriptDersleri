@@ -1,9 +1,10 @@
 # Obyektler
+
 Javascriptdə hərşey obyektlərdən referans aldığını bilirik. Məsələn booleanlar, rəqəmlər, strinqlər, funksiyalar, massivlər. Javascriptdə olan obyektlər eyni ilə digər proqramlaşdırma dillərində də mövcuddur.
 
 Obyektlərin property-ləri istənilən tipdə məlumatı özündə saxlaya bilər. Bura həmçinin funksiyalarımızda daxildir. Məsələn
-```js 
 
+```js
 const user = {
     ad: "Ilkin",
     soyad: "Zulfi",
@@ -13,19 +14,19 @@ const user = {
 console.log(user.tamAd())
 ```
 
-
 Obyektlərə istənilən qədər property əlavə etmək mümkündür. Bunun üçün obyektin adı.yeniProperty = "" yaza bilərik.
 
 ```js
 user.country = "Azerbaijan";
 ```
- 
+
 Həmçinin obyektin propertylərini delete açar sözü vasitəsi ilə də silə bilərik. delete açar sözü vasitəsi ilə silinən propertynin dəyəridə həmçinin silinmiş olur və bu geriyə qaytarıla bilinmir. delete açar sözü obyekt propertyləri üçün yaradılmış açar sözdür. Yəni delete funksiya və ya digər məlumat tiplərində istifadə edib nəticə almaq mümkün deyil.
+
 ```js
 delete user.country;
 ```
 
-Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üsullar mövcuddur. Bunlardan bəziləri aşağıdakılardır: 
+Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üsullar mövcuddur. Bunlardan bəziləri aşağıdakılardır:
 
 - obyektin propertylərinin adlarına görə,
 
@@ -48,24 +49,23 @@ Javascriptdə obyektlərin daxilindəki propertyləri almaq üçün bir çox üs
       }
       demo.innerHTML = txt;
     ```
-    
+
 - Object.values()  - obyekti massivə çevirir
+
   ```js
     const myArr = Object.values(user);
     console.log(myArr);
   ```
+
 - JSON.stringify() - javascript string ə çevirir.
+
     ```js
     let str = JSON.stringify(user);
 
     console.log(str);
     ```
 
-
-
-
-
-### Get və Set
+## Get və Set
 
 Get metodu obyektlərdə funksiya yaratmağa və nəticəsini döndürməyə imkan verən açar sözdür.
 
@@ -126,10 +126,10 @@ const user = {
 console.log(user.tamAd())
 ```
 
-
 ### Object.defineProperty()
 
 Object.defineProperty() metodu javascript obyektlərinə get və setləri tanıtmaqda istifadə olunur. Bunun üçün aşağıdakı üsuldan istifadə olunur:
+
 ```js
 //Object.defineProperty(obyektinAdi, "get və ya set üçün təyin etdiyimiz ad", {
 //  get və ya set: function(){kod blokumuz}
@@ -173,8 +173,7 @@ oby.azaltma;
 console.log(oby.saygac);
 ```
 
-
-# Constructor
+## Constructor
 
 { ... } yazısı obyekt yaratmaq üçün istifadə olunur. Bununla belə, bir obyektə bənzər müxtəlif obyektlərin yaradılması arzuolunan ola bilər. Məsələn, müxtəlif istifadəçilər, fərqli menyu dəyərləri.
 
@@ -218,6 +217,7 @@ function Istifadeci(ad) {
 ```
 
 Əgər konstruktorumuzun hər hansısa dəyəri gəlmədiyi halda default dəyərin almasını istəyiriksə onda, konstruktor mötərizələri daxilində default dəyəri daxil etməliyik.
+
 ```js
 function Istifadeci(ad, admindir=false) {
   this.ad = ad;
@@ -232,7 +232,6 @@ console.log(enYeniIstifadeci);
 ```
 
 Ümumi olaraq konstruktorlarında obyektlərin prototipi olduğunu artıq gördük. Lakin obyektlərdən prototip olaraq yaradılmasına baxmayaraq, obyektlərə yeni propertylərimizi əlavə etdiyimiz kimi konstruktorlara da əlavə edə bilmərik.
-
 
 ```js
 function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
@@ -265,6 +264,7 @@ console.log(sirab.endirimMeblegi) //15
 ```
 
 Həmçinin prototype açar sözü konstruktora yeni metod əlavə etməyə də imkan verir.
+
 ```js
 function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
             this.ad = ad;
@@ -282,12 +282,10 @@ function Mehsul(ad, aciqlama, sekil, qiymet, endirim = false) {
         console.log(su.yekun())
 ```
 
-
-
-
-# Class
+## Class
 
 Class-lar javascript obyektlərindən fərqlidir. Class-ları konstruktorlarımız şablon yaradılmasında istifadə edirik. Buna görədə javascriptdə class yaradılarkən ona mütləq konstruktor da əlavə edilməlidir. Məsələn:
+
 ```js
 class Masin {
     constructor(marka, model, il, yuruyus, suretlerQutusu, rengi) {
@@ -311,6 +309,7 @@ demo.innerHTML = "Masinimin yasi " + masinim.yasi() + " dur."
 ```
 
 Həmçinin class içərisinə məlumatları arqument olaraqda göndərə bilərik.
+
 ```js
 class Masin {
     constructor(marka, model, il, yuruyus, suretlerQutusu, rengi) {
@@ -334,7 +333,7 @@ let masinim = new Masin("BMW", "M3", "2014", "125406", "Avtomatik", "Qara")
 console.log("masinimin yasi " + masinim.yasi(il));
 ```
 
-### Class ... extends ... super -  siniflərdə varislik.
+### Class ... extends ... super -  siniflərdə varislik
 
 Classlarda varislik yaratmaq üçün *extends* açar sözündən sitifadə olunur. *extends* açar sözü varisliyini aldığı klassdan bütün metodlarını əldə edir.
 
@@ -366,8 +365,7 @@ console.log(menimMasinim);
 demo.innerHTML = menimMasinim.goster();
 ```
 
-
-# Rest-Spread operator (...) -  yayılma operatoru
+## Rest-Spread operator (...) -  yayılma operatoru
 
 Rest operatoru bizə gələ biləcək qeyri müəyyən sayda məlumatları saxlamağa icazə verir. Spread operatorunu funksiyanın arqumentlərini yaymağa, obyektləri və massivləri yaymağa kömək edir.
 
@@ -379,7 +377,8 @@ const obj = {
 }; 
 console.log(obj);
 ```
-```
+
+```js
 function cem(...ededler) {
   let cem = 0;
   for (let eded of ededler) cem += eded;
@@ -390,7 +389,9 @@ let x = cem(15, 6, 20, 111);
 
 demo.innerHTML = x;
 ```
-# Destructuring
+
+## Destructuring
+
 Massivlərin və ya obyektlərin property və valuelarını başqa bir dəyişənə mənimsətməyə icazə verən üsuldur.
 
 ```js
@@ -405,6 +406,7 @@ console.log(b);
 
 console.log(yayma);
 ```
+
 ```js
 const masinlar = ['mustang', 'f-150', 'expedition'];
 
