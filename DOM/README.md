@@ -117,19 +117,36 @@ NodeList və HTMLCollection demək olarki eyni şeydir. Hər ikisi sənəddən a
 
 Hər ikisi siyahıda (kolleksiyada) elementlərin sayını qaytaran uzunluq xüsusiyyətinə malikdir. HTMLCollection sənəd elementlərinin toplusudur. NodeList sənəd qovşaqlarının (element qovşaqları, atribut qovşaqları və mətn qovşaqları) toplusudur. HTMLCollection elementlərinə onların adı, id və ya indeks nömrəsi ilə daxil olmaq olar. NodeList elementlərinə yalnız onların indeks nömrəsi ilə daxil olmaq olar. HTMLCollection həmişə canlı kolleksiyadır. Misal: DOM-dakı siyahıya li elementi əlavə etsəniz, HTMLCollection-dakı siyahı da dəyişəcək. NodeList çox vaxt statik kolleksiyadır. Misal: DOM-dakı siyahıya li elementi əlavə etsəniz, NodeList-dəki siyahı dəyişməyəcək. getElementsByClassName() və getElementsByTagName() metodları canlı HTMLCollection qaytarır. querySelectorAll() metodu statik NodeList-i qaytarır. childNodes xüsusiyyəti canlı NodeList-i qaytarır.
 
-HTML elementlərinin dəyişdirilməsi
+- HTML elementlərinin dəyişdirilməsi üçün bir çox üsullar var. Bunlar elementin içərisinə yeni html kodu əlavə etmək, mətnini dəyişdirmək, atributlarını dəyişdirmək daxildir.
 
 ```js
-+ element.innerHTML = html kontent
-+ element.style.property = value
-+ element.setAttribute(attribute, value)
+element.innerText = `Salam`
+// elementimizin içərisinə string tipli məlumatı yazmaq üçün istifadə olunur
+element.textContent = `Salam`
+// elementimizin içərisinə string tipli məlumatı yazmaq üçün istifadə olunur
+element.innerHTML = `<h1>Salam</h1>`
+// elementimizin içərisinə string tipli html məlumatı yazmaq üçün istifadə olunur
+element.style.property = value
+// elementimizin stili üzərinədə dəyişiklik edə bilmək üçün istifadə olunur
+element.setAttribute(attribute, value)
+// elementin hazırki atributunu dəyişmək və ya ona yeni atribut əlavə etmək üçün istifadə olunur
+element.getAttribute(attribute)
+// elementin hazırki atributunun dəyərinin alınması üçün istifadə olunur
+element.removeAttribute(attribute)
+// elementin hazırki atributunun silinməsi üçün istifadə olunur
+```
 
-Elementlərin əlavə edilməsi və silinməsi
-+ document.createElement(div)
-+ document.appendChild(element)
-+ document.removeChild(element)
-+ document.replaceChild(new, old)
-+ document.write(text)
+- JavaScript vasitəsi ilə yeni HTML elementlərin yaradılması, əlavə edilməsi və silinməsi.
+
+```js
+document.createElement('div')
+// yeni div teqinin yaradılması
+document.appendChild(element)
+// yaradılmış teqi hər hansı elementə övlad kimi əlavə etmək
+document.removeChild(element)
+// yaradılmış teqi hər hansı elementdən silmək
+document.replaceChild(new, old)
+// yaradılmış teqi, başqa bir teq ilə əvəz etmək
 ```
 
 ```js
@@ -154,28 +171,71 @@ div.removeChild(paragraf2)
 div.replaceChild(paragraf3, paragraf)
 ```
 
-Elementlərin classlarına əlavə etmə və silmə işləri üçün:
+- HTML Elementlərin classlarına əlavə etmə və silmə işləri üçün:
 
 ```js
-// Əlavə edir
+// Əlavə etmək üçün
 element.classList.add("classadi");
-// klası silir
+// klası silmək üçün
 element.classList.remove("classadi");
-// varsa silir, yoxdursa əlavə edir
+// bildirilən klas varsa silmək, yoxdursa əlavə etmək üçün istifadə olunur
 element.classList.toggle("classadi");
 ```
 
 HTML obyektlərinin tapılması
 
 ```js
-+ document.anchors
-+ document.body
-+ document.cookie
-+ document.doctype
-+ document.documentElement
-+ document.domain
-+ document.forms
-+ document.head
-+ document.images
-+ document.title
+document.anchors
+// Bütün <a> teqlərinin tapılması üçün istifadə olunur
+
+document.baseURI
+// Sənədin baseURI dəyərinin tapılması üçün istifadə olunur
+
+document.body
+// Body teqinin tapılması üçün istifadə olunur
+
+document.cookie
+// Cookie-nin tapılması üçün istifadə olunur
+
+document.doctype
+// Doctype-nin tapılması üçün istifadə olunur
+
+document.documentElement
+// <html> elementinin tapılması üçün istifadə olunur
+
+document.documentMode
+// Brauzer tərəfindən istifadə olunan modun  tapılması üçün istifadə olunur
+
+document.documentURI
+// Sənədin URI  tapılması üçün istifadə olunur
+
+document.domain
+// Domainin tapılması üçün istifadə olunur
+
+document.embeds
+// <embed> elementlərinin  tapılması üçün istifadə olunur
+
+document.forms
+// <form> elementlərinin tapılması üçün istifadə olunur
+
+document.head
+// <head> elementinin tapılması üçün istifadə olunur
+
+document.images
+// Bütün <img> elementlərinin tapılması üçün istifadə olunur
+
+document.inputEncoding
+// Sənədin encoding (character set) tapılması üçün istifadə olunur
+
+document.lastModified
+// Sənədin son yenilənmə tarixinin tapılması üçün istifadə olunur
+
+document.links
+// Bütün <area> və <a> elementlərinin tapılması üçün istifadə olunur
+
+document.scripts
+// Bütün <script> elementlərinin tapılması üçün istifadə olunur
+
+document.title
+// Sənədin <title> elementinin tapılması üçün istifadə olunur
 ```

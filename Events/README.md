@@ -1,5 +1,12 @@
 # Events
 
+HTML event-ləri brauzerin etdiyi və ya istifadəçinin etdiyi bir şey ola bilər. HTML event-lərinin bəzi nümunələri bunlardır:
+
+- HTML veb səhifəsinin yüklənməsi tamamlandı
+- HTML input sahəsi dəyişdirildi
+- HTML düyməsi klikləndi və s.
+Çox vaxt hadisələr baş verəndə siz nəsə etmək istəyə bilərsiniz. JavaScript event-ləri aşkar edildikdə kodu icra etməyə imkan verir. HTML JavaScript kodu ilə event idarəedici atributlarını HTML elementlərinə əlavə etməyə imkan verir.
+
 ```html
 <select onchange="changeEventi(this)">
   <option value="html">HMTL</option>
