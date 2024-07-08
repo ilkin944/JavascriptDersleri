@@ -105,7 +105,7 @@ console.log(a.lastIndexOf('a'))
 // 3
 ```
 
-- **.search()** - sözdəki simvolun indexin tapmaq üçün istifadə olunur. Axtarış zamanı eyni simvol bir neçə dəfə keçsə belə ilk nəticəni göstərir
+- **.search()** - sözdəki simvolun indexin tapmaq üçün istifadə olunur. Axtarış zamanı eyni simvol bir neçə dəfə keçsə belə ilk nəticəni göstərir. Nəticə tapılmadıqda isə -1 cavabını əldə etmiş olacağıq
 
 ```js
 let a = "JavaScript"
@@ -113,7 +113,7 @@ console.log(a.search('v'))
 // 2
 ```
 
-- **.match()** - sözdə hər hansı uzlaşmanı yoxlamaq üçün istifadə olunur. Əgər axtarılan nəticə varsa, array formasında bizə geri cavab göndərir
+- **.match()** - sözdə hər hansı uzlaşmanı yoxlamaq üçün istifadə olunur. Əgər axtarılan nəticə varsa, array formasında bizə geri cavab göndərir. Nəticə tapılmadıqda isə null cavab geri qayıtmış olacaq
 
 ```js
 let a = "JavaScript"
@@ -308,3 +308,4 @@ console.log(a.at(0))
 console.log(a.at(-1))
 // t
 ```
+Qeyd: at() metodu yeni yaranmış metod olduğuna görə qısa yol olaraq VS Code tövsiyyəsi içərisində görməyə bilərsiniz
