@@ -1,6 +1,94 @@
 
 # Javascript Dərs 1
 
+## Dəyişkən yaradılması
+
+<h3 id='var'>var</h3>
+
+Təkrar təyin oluna bilən: var ilə təyin olunan dəyişənləri təkrarən təyin etmək mümkündür. Məsələn:
+javascript
+
+```js
+var a = 1;
+var a = 2; // Bu mümkündür
+```
+
+Blok əhatəsi yoxdur: var dəyişənləri yalnız funksiyanın əhatəsində olur, blok əhatəsinə malik deyil. Bu, o deməkdir ki, for, if və digər bloklar daxilində təyin olunan var dəyişənləri blokdan kənarda da mövcuddur.
+javascript
+
+```js
+if (true) {
+  var b = 3;
+}
+console.log(b); // 3
+```
+
+Hoisting: var ilə təyin olunan dəyişənlər, kodun icrasından əvvəl qaldırılır (hoisting). Yəni dəyişənlər təyin olunmadan istifadə edilə bilər, lakin onların dəyəri undefined olacaq:
+javascript
+
+```js
+console.log(c); // undefined
+var c = 4;
+```
+
+<h3 id='let'>let</h3>
+
+Təkrar təyin oluna bilməz: let ilə təyin olunan dəyişənləri təkrarən təyin etmək mümkün deyil:
+javascript
+
+```js
+let d = 5;
+let d = 6; // Səhv verəcək
+```
+
+Blok əhatəsi var: let dəyişənləri blok əhatəsinə malikdir, yəni if, for və digər bloklar daxilində təyin olunan dəyişənlər yalnız həmin blok daxilində mövcuddur:
+javascript
+
+```js
+if (true) {
+  let e = 7;
+}
+console.log(e); // Səhv verəcək
+```
+
+Hoisting: let dəyişənləri də hoisting-ə məruz qalır, lakin onlar istifadə olunmadan əvvəl təyin olunmalıdır:
+javascript
+
+```js
+console.log(f); // Səhv verəcək
+let f = 8;
+```
+
+<h3 id='const'>const</h3>
+
+Sabit dəyişənlər: const ilə təyin olunan dəyişənlər təyin olunduqdan sonra dəyəri dəyişdirilə bilməz:
+javascript
+
+```js
+const g = 9;
+g = 10; // Səhv verəcək
+```
+
+Blok əhatəsi var: const dəyişənləri də let kimi blok əhatəsinə malikdir:
+javascript
+
+```js
+if (true) {
+  const h = 11;
+}
+console.log(h); // Səhv verəcək
+```
+
+Hoisting: const dəyişənləri də hoisting-ə məruz qalır, lakin onlar istifadə olunmadan əvvəl təyin olunmalıdır:
+javascript
+
+```js
+console.log(i); // Səhv verəcək
+const i = 12;
+```
+
+Bu fərqlər JavaScript-də var, let və const dəyişənlərinin düzgün və təhlükəsiz istifadə edilməsini təmin edir. Dəyişənlərinizin əhatəsini və dəyərlərinin dəyişməyəcəyini nəzərə alaraq, uyğun dəyişən tipini seçməyiniz vacibdir.
+
 ## Javascriptdə data tiplər
 
 - Numbers - Rəqəmlər məs:(5, 10, 3.22, -10.4356436)
@@ -155,7 +243,7 @@ x **= 5; // x = x ** 5
   else if() {} - if şərt bloku ilə birgə istifadə olunur və if şərt blokunun ödənmədiyi halda digər 2ci şərti yoxlaya bilməyimiz üçündür
   else{} - if şərt bloku ilə birgə istifadə olunur və heç bir şərtin ödənmədiyi halda yekunda edilməli olan kod blokudur.
 
-  nümunə olaraq: 
+  nümunə olaraq:
 
   ```js
   var yash = 18;
@@ -565,3 +653,72 @@ function funksiyam() {
 </body>
 </html>
 ```
+
+<h3 id='reservedWords'>Rezerv olunmuş sözlər</h3>
+
+Javascriptdə bəzi rezerv olunmuş yəni istifadəsi qadağan olan sözlər mövcuddur. Bu sözlər dil daxilində müəyyən işləri gördüyü üçün, bunlarla eyni adda heç bir dəyişən, funksiya və digər obyektlər yarada bilməzsiniz.
+
+- abstract
+- arguments
+- await*
+- boolean
+- break
+- byte
+- case
+- catch
+- char
+- class*
+- const*
+- continue
+- debugger
+- default
+- delete
+- do
+- double
+- else
+- enum*
+- eval
+- export*
+- extends*
+- false
+- final
+- finally
+- float
+- for
+- function
+- goto
+- if
+- implements
+- import*
+- in
+- instanceof
+- int
+- interface
+- let*
+- long
+- native
+- new
+- null
+- package
+- private
+- protected
+- public
+- return
+- short
+- static
+- super*
+- switch
+- synchronized
+- this
+- throw
+- throws
+- transient
+- true
+- try
+- typeof
+- var
+- void
+- volatile
+- while
+- with
+- yield

@@ -40,7 +40,7 @@ let inter = setInterval(function(){
 clearInterval(inter)
 ```
 
-## Date obyekti
+<h2 id='date'>Date obyekti</h2>
 
 ### Yeni təqvim obyekti yaratmaq üçün Date() dən istifadə olunur
 
