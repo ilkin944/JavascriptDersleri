@@ -1,6 +1,12 @@
 # JSON
 
-JSON - JavaScript Obyekt Notation sözlərinin qısaldımış formasıdır. JSON məlumatların saxlanması və daşınması üçün mətn formatıdır. JSON "özünü təsvir edir" və başa düşmək asandır. Bu nümunə JSON sətridir:
+JavaScript Object Notation (JSON) JavaScript obyekt sintaksisinə əsaslanan strukturlaşdırılmış məlumatları təmsil etmək üçün standart mətn əsaslı formatdır. O, əsasən proqramlarında məlumatların ötürülməsi üçün istifadə olunur (məsələn, bəzi məlumatların serverdən müştəriyə göndərilməsi, ona görə də onlar veb-səhifədə göstərilə bilər və ya əksinə).
+
+JSON JavaScript obyektinin hərfi sintaksisinə yaxından bənzəsə də, JavaScript-dən müstəqil olaraq istifadə edilə bilər və bir çox proqramlaşdırma mühitləri JSON-u oxumaq (analiz etmək) və yaratmaq qabiliyyətinə malikdir.
+
+JSON sətir kimi mövcuddur — məlumatı şəbəkə üzrə ötürmək istədiyiniz zaman faydalıdır. Məlumata daxil olmaq istədiyiniz zaman onu yerli JavaScript obyektinə çevirmək lazımdır. Bu böyük problem deyil - JavaScript ikisi arasında konvertasiya etmək üçün mövcud üsullara malik qlobal JSON obyekti təqdim edir.
+
+Bir sətri local obyektə çevirmək deserializasiya, local obyekti şəbəkə üzrə ötürülə bilməsi üçün sətirə çevirmək serializasiya adlanır.
 
 ```json
 '{"ad":"Tofiq", "yas":30, "masin":null}'
