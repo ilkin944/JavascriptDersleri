@@ -2,7 +2,8 @@
 
 Dövr hər hansı bir kodumuzun davamlı olaraq eyni işi görə bilməsi üçün istifadə etdiyimiz metodlardır. Məsələn biz ekranda 1-dən 100-ə qədər rəqəmlərin davamlı olaraq yazılmasını istəyirik. Bu ardıcıllıq eyni işi fərqli rəqəmlər üzərindən gördüyünə görə burada dövrlərdən istifadə oluna bilər. JavaScriptdə dövrlərin 4 əsas növü vardır.
 
-- **For dövrü** - for dövrü, dövrün başlanğıcının və sonunun bildirildiyi, eyni zamanda dövrün necə işləməsinin birlikdə təyin olunduğu dövrdür.
+<h2 id='for'>For dövrü</h2>
+for dövrü, dövrün başlanğıcının və sonunun bildirildiyi, eyni zamanda dövrün necə işləməsinin birlikdə təyin olunduğu dövrdür.
 
 for (dövrün başlanğıcı; dövrün bitiş nöqtəsi; dövrün işləmə forması) {
   // kod blokunun nə icra edəcəyi yer
@@ -41,6 +42,7 @@ Yuxarıdakı nümunədən oxuya bilərsiniz:
 İfadə 3 hər dəfə dövrdə kod bloku icra edildikdə dəyəri 1 vahid azalır.
 Bu dövr i ədədinin hər dəfə 1 vahid azaldaraq ikinci ifadədə qeyd olunan şərtə qədər (; i > 0;) davam edir. Sonuncu olaraq i dəyişəni 1 olduqdan sonra dövr bitmiş sayılır. Çünki 0 > 0 şərti ödənilmir.
 
+<h2 id='for-in'>For-in dövrü</h2>
 - **for-in** dövrü obyektin keyləri üzərində dövr edə bilməyiniz üçün istifadə olunur. Kod bloku for dövrünə bənzəsə də, bu dövr başlanğıc və bitiş yeri həmçinin dövrün hansı istiqamətə gedəcəyini bildirmədən, obyektin bütün key-ləri üzərində dövr edir.
 
 ```js
@@ -75,6 +77,7 @@ console.log(netice)
 // 4 8 12 16 20
 ```
 
+<h2 id='for-of'>For-of dövrü</h2>
 - **for-of** dövrü *array*, *string*, *Map*, *NodeList* və digər təkrarlana bilən stukturlar üzərində dövr etmək üçündür. Bu dövr növü öncəki for-in dövrü ilə eyni struktura malikdir.
 
 ```js
@@ -104,6 +107,7 @@ metn = metn + x + " - ";
 // J - a - v - a - S - c - r - i - p - t - 
 ```
 
+<h2 id='while'>While dövrü</h2>
 - **while** dövrü hər hansısa şərtin doğru olduğu zaman işə düşən dövrdür. For dövrünə bənzər olan bu dövr növünün for dövründən əsas fərqi struktur fərqləri olmasıdır.
 
 ```js
@@ -132,6 +136,7 @@ while (i < 10) {
 
 While dövrünü işə salmaq üçün, onun işləyəcəyi şərtin başlanğıcını kənarda təyin etməli və while dövrü içərisində bunu yoxlamalıyıq. While dövrünün icra edəcəyi kod bloku daxilində isə şərtin ödəndiyi müddətcə dövrün davam edə bilməsi üçün dövrü artan və ya azalan istiqamətdə təyin etməliyik.
 
+<h2 id='do-while'>Do-While dövrü</h2>
 - **do-while** - dövrü while dövrünün digər bir növüdür. Belə ki bu kod bloku while içərisində olan şərt işə düşmədən öncə **do** kod bloku **1 dəfə** icra olunur, sonrasında isə while dövrü içərisindəki şərtə əsasən icra olunur. Bu səbəbdən də, siz 1-ci dəfəsində istəmədən belə olsa arzulanmayan nəticəni görə bilərsiniz.
 
 ```js
@@ -154,6 +159,7 @@ while (1 > i < 10);
 // 9
 ```
 
+<h2 id='break'>Break</h2>
 - **break** - break sözünü biz şərtləri öyrənərkən istifadə etdiyimizi xatırlayırıq. Bəs dövr içərisində break-ı necə istifadə edə bilərik?
 
 ```js
