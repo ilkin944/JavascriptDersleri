@@ -64,6 +64,22 @@ console.log(n4) //"5.568"
 console.log(n5) //"5.5679"
 ```
 
+## valueOf()
+
+valueOf() rəqəmi rəqəm kimi qaytarır.
+
+```js
+let x = 123;
+x.valueOf();
+// 123
+(123).valueOf();
+// 123
+(100 + 23).valueOf();
+// 123
+```
+
+JavaScript-də ədəd primitiv dəyər (typeof = number) və ya obyekt (typeof = obyekt) ola bilər. **valueOf()** metodu rəqəm obyektlərini primitiv dəyərlərə çevirmək üçün JavaScript-də daxili olaraq istifadə olunur.
+
 ## Number()
 
 **Number()** - metodu javascriptdə hər hansı string və ya digər veriləni mümkün qədər rəqəmə çevirməyə kömək edən metoddur
@@ -93,6 +109,28 @@ console.log(Number("10 33"));
 console.log(Number("John")); 
 // NaN - Rəqəmə çevirilə bilməyən söz
 
+```
+
+## Number.isInteger() metodu
+
+Arqument **tam** ədəddirsə, **Number.isInteger()** metodu **true** qaytarır.
+
+```js
+Number.isInteger(10);
+// true
+Number.isInteger(10.5);
+// false
+```
+
+## Number.isSafeInteger() metodu
+
+Təhlükəsiz tam ədəd ikiqat dəqiqlikli ədəd kimi tam olaraq göstərilə bilən tam ədəddir. Arqument **təhlükəsiz tam ədəd**dirsə, **Number.isSafeInteger()** metodu **true** qaytarır
+
+```js
+Number.isSafeInteger(10);
+// true
+Number.isSafeInteger(12345678901234567890);
+// false
 ```
 
 ## NaN
@@ -269,4 +307,75 @@ console.log(Number.isNaN(0 / 0));
 let a = 1000000;
 console.log(a.toLocaleString());
 // 1,000,000
+```
+
+## JavaScript Number Properties
+
+## JavaScript EPSILON
+
+Number.EPSILON 1 və 1-dən böyük olan ən kiçik kəsr rəqəm sayı arasındakı fərqdir
+
+```js
+let x = Number.EPSILON;
+// 2.220446049250313e-16
+```
+
+## JavaScript MAX_VALUE
+
+Number.MAX_VALUE JavaScript-də mümkün olan **ən böyük ədəd**i təmsil edən sabitdir.
+
+```js
+let x = Number.MAX_VALUE;
+// 1.7976931348623157e+308
+```
+
+## JavaScript MIN_VALUE
+
+Number.MIN_VALUE JavaScript-də mümkün olan **ən aşağı ədəd**i təmsil edən sabitdir.
+
+```js
+let x = Number.MIN_VALUE;
+// 5e-324
+```
+
+## JavaScript MAX_SAFE_INTEGER
+
+Number.MAX_SAFE_INTEGER JavaScript-də maksimum təhlükəsiz tam ədədi təmsil edir.
+
+```js
+let x = Number.MAX_SAFE_INTEGER;
+// 9007199254740991
+```
+
+## JavaScript MIN_SAFE_INTEGER
+
+Number.MIN_SAFE_INTEGER JavaScript-də minimum təhlükəsiz tam ədədi təmsil edir.
+
+```js
+let x = Number.MIN_SAFE_INTEGER;
+// -9007199254740991
+```
+
+## JavaScript POSITIVE_INFINITY
+
+```js
+let x = Number.POSITIVE_INFINITY;
+// Infinity
+```
+
+```js
+let x = 1 / 0;
+// Infinity
+```
+
+## JavaScript NEGATIVE_INFINITY
+
+```js
+let x = Number.NEGATIVE_INFINITY;
+// -Infinity
+```
+
+```js
+let x = -1 / 0;
+// -Infinity
 ```
