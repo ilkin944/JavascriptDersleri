@@ -1,7 +1,7 @@
 # ES2022 yeni özəllikləri
 
-- Array at()
-- String at()
+- [Array at()](/Array/README.md)
+- [String at()](/String/README.md)
 - RegExp /d
 - Object.hasOwn()
 - error.cause

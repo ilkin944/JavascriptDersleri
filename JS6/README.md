@@ -4,7 +4,7 @@ Storage brauzerdə məlumatların saxlanması və əldə edilməsi üçün sadə
 
 Storagelər əsasən 2 növdədir. Local Storage və Session Storage.
 
-### Local Storage məlumatların silinmədiyi müddətcə brauzerlərin yaddaşında qalmasına kömək edir
+## Local Storage məlumatların silinmədiyi müddətcə brauzerlərin yaddaşında qalmasına kömək edir
 
 ### Session storage isə brauzer sessiyası açıq olan müddətdə yaddaş qalır və ya müəyyən müddət ərzində yaddaşda saxlanılır. Sessiya bitdikdən sonra isə həmin məlumatlar yaddaşdan silinir.
 
@@ -12,34 +12,33 @@ Storagelərdə saxlanılan məlumatlar tip olaraq JavaScript obyektlərinə və 
 
 Local Storage - ə məlumat əlavə etmək üçün *localStorage.setItem("key", "value")* istifadə edilir. 
 
-```
+```js
 localStorage.setItem("ad", "RG Academy");
 ```
 
 Local Storage - də olan məlumata baxmaq üçün isə, *localStorage.getItem("key")* üsulundan istifadə olunur.
 
-```
+```js
 localStorage.getItem("ad")
 ```
 
 Local Storage - də olan xüsusi key i silmək üçün isə, *localStorage.removeItem("key")* istifadə etmək lazımdır.
 
-```
+```js
 localStorage.removeItem("ad")
 ```
 
 Storage-də olan bütün key və value ləri silmək üçün isə *localStorage.clear()* üsulundan istifadə etmək lazımdır.
 
-```
+```js
 localStorage.clear()
 ```
 
 *Həmçinin yuxarıdakı bütün setItem, getItem, removeItem və clear metodları sessionStorage üçündə keçərlidir*.
 
+## API - Application Programming Interface
 
-# API - Application Programming Interface 
-
-API tətbiqlərin proqramlaşdırma interfeysidir. APİ lər vasitəsi ilə brauzerlərin, serverlərin funksionallığı artırılması üçündür. 
+API tətbiqlərin proqramlaşdırma interfeysidir. APİ lər vasitəsi ilə brauzerlərin, serverlərin funksionallığı artırılması üçündür.
 
 Həmçinin APİ layihələrimizdə məlumatların idarə olunması üçün ən əlverişli vasitədir. 
 
@@ -109,7 +108,7 @@ locationTap();
 
 Əlavə olaraq istifadəçidən alınan enlik və uzunluq nəticələrini canlı xərtiə vasitəsi ilə də göstərmək mümkündür. Yuxarıdakı *yeriGoster* funksiyası daxilində bunları əlavə edə bilərik.
 
-```
+```js
 function yeriGoster(yer) {
   let enUzun = yer.coords.latitude + "," + yer.coords.longitude;
 
@@ -118,18 +117,19 @@ function yeriGoster(yer) {
   document.getElementById("xerite").innerHTML = "<img src='"+sekilUrl+"'>";
 }
 ```
-### Qeyd: Xəritədən ünvanı göstərə bilmək üçün Google Map API key tələb olunur. 
+
+## Qeyd: Xəritədən ünvanı göstərə bilmək üçün Google Map API key tələb olunur
+
 ### Google Map API key əldə etmək üçün bu [linkə](https://developers.google.com/maps/documentation/embed/get-started) daxil olub ətraflı oxuya bilərsən
 
 Geolocation obyektinin başqa maraqlı üsulları da var:
-
 
 *watchPosition()* - İstifadəçinin cari mövqeyini qaytarır və istifadəçi hərəkət etdikcə yenilənmiş mövqeyə qaytarmağa davam edir (avtomobildəki GPS kimi).
 *clearWatch()* - watchPosition() Metodunu dayandırır .
 
 Aşağıdakı nümunə *watchPosition()* metodu göstərir. Bunu yoxlamaq üçün dəqiq GPS cihazı lazımdır (məsələn, smartfon):
 
-```
+```js
 function locationTap {
   if (navigator.geolocation) { navigator.geolocation. watchPosition(yeriGoster, sehviGoster);
   } else {
@@ -138,8 +138,7 @@ function locationTap {
 }
 ```
 
-
-# Asinxron funksiyalar
+## Asinxron funksiyalar
 
 JavaScript tək core-lu və sinxron proqramlaşdırma dilidir. Yəni biz hər hansı kodlar yazdıqda kodlarımız Brauzerlərin sətrbə-sətir oxuduğu kimi icra olunur. Məsələn JavaScript daxilində 3 funksiyamız var. İlk funksiya rəqəmlərin cəmini hesablayır, 2-ci funksiya kənar mənbədən API ilə məlumatı çəkir, 3-cü funksiya isə ekranda hər hansı məlumatı dəyişir. JavaScript normal vəziyyətdə (sinxron) ilk növbədə birinci funksiyanı işə salır, sonrasında ikinci funksiyanın məlumatı tam əldə etməsini gözləyir, sonra isə üçüncü funksiya işə düşür.
 
@@ -149,14 +148,13 @@ Lakin bəzən bu bizim üçün çox vaxt ala biləcək üsul olduğuna görə di
 - promise funksiyalar
 - async və await funksiyaları
 
-
 ### Callback functionlar
 
 Callback başqa bir funksiyanın daxilində ötürülən və sonra tapşırığı yerinə yetirmək üçün həmin funksiyaya çağırılan funksiyadır.
 
 Aşağıdakı nümunədə kodumuzu konsolda göstərən funksiyalar yazılıb. Sinxron olaraq ilk *ikinciFunksiya*, sonra isə *birinciFunksiya* çağrıldığı üçün konsolumuzda görünən nəticədə də ilk növbədə *necəsən*, sonra isə *salam* yazısını görürük.
 
-```
+```js
 function gosteren(kod) {
     console.log(kod);
 } 
@@ -175,7 +173,7 @@ birinciFunksiya();
 
 Və ya biz funksiyalarımızı çağıra sonrasında isə onu digər funksiya içərisində göstərə bilərik. Məsələn
 
-```
+```js
 function gosteren(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
@@ -191,7 +189,7 @@ gosteren(netice);
 
 və yaxudda nəticəni göstərən funksiyanı topla funksiyası içərisində çağıra bilərik
 
-```
+```js
 function gosteren(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
@@ -210,7 +208,7 @@ Digər nümunədə isə topla funksiyasını çağırıb, *gosteren* funksiyası
 
 Artıq belə bir problemlə qarşılaşdıqda isə *callback* funksiyalardan istifadə edə bilərik. Callback funksiyası hər hansı bir funksiya işlədikdən sonra arqument olaraq başqa bir funksiyanı çağırmağa imkan verir.
 
-```
+```js
 function callbackFunksiyası(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
@@ -221,12 +219,11 @@ function topla(num1, num2, callbackFunksiyası) {
 }
 
 topla(5, 5, callbackFunksiyası);
-
 ```
 
 Callback funksiyalar, funksiya daxilində başqa bir funksiyanı çağırmağa və ona nəticəni sonradan ötürməyə imkan verir. Məsələn aşağıdakı nümunədəki kimi setTimeout daxilində çağrılan funksiya növbəti sətrdə gələn *console.log('sonuncu konsol');* işləməsinə mane olmur. Çünki setTimeout 2 saniyə sonrasında icra olunacaq
 
-```
+```js
 console.log('ilk konsol');
 console.log('ikinci konsol');
 
@@ -258,7 +255,7 @@ Bizim kontekstimizdə vəd etmək bir qədər vaxt aparacaq bir şeydir. Vədin 
   
 Callback funksiyalarının problemlərini həll etmək üçün promise-lər gəldi. Vəd parametr kimi iki funksiyanı yerinə yetirir. Yəni *resolve* və *reject*. Unutmayın ki, *resolve (həll)* düz nəticəni, uğuru və *reject (rədd etmək)* səhv baş verən zamanda qayıdan nəticədir.
 
-```
+```js
 function neticeGosteren(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
@@ -283,8 +280,9 @@ sozVerirem.then(
 
 Promise-lərin necə işlədiyini digər bir izahla, callback funksiyalar üzərində setTimeout funksiyasını yenidən promise-lə yoxlayaq.
 
-Bu nümunədə ilk iki və son konsol nəticəsi göstəriləcək. Və burada javascriptdə söz veririk ki, bu funksiya işləyəcək və sən nəticəni işlədikdən sonra görəcəksən. 
-```
+Bu nümunədə ilk iki və son konsol nəticəsi göstəriləcək. Və burada javascriptdə söz veririk ki, bu funksiya işləyəcək və sən nəticəni işlədikdən sonra görəcəksən.
+
+```js
 console.log('ilk konsol');
 console.log('ikinci konsol');
 
@@ -301,10 +299,9 @@ menimVedim.then(function(deyer){
 console.log('sonuncu konsol');
 ```
 
-
 və ya promise-i hər hansı faylın yüklənməsini gözləyərkən də edə bilərik. Aşağıdakı nümunədə  XML HTTP Requestlə sorğu göndəririk.
 
-```
+```js
 function neticeGosteren(kod) {
     document.getElementById("demo").innerHTML = kod;
 }
@@ -328,16 +325,15 @@ vedim.then(
 ); 
 ```
 
-
 Lakin layihələrimizdə promise-lərində sayı artdıqca kodlarımızı başa düşmək və nəticəni qaytarmaq getdikcə çətinləşir. Bu səbəbdən yeni *async* və *await* metodlarından istifadə edərək, funksiyamızın asinxron olmasını və cavabın gəlməsini *promise* vasitəsi ilə gözləməyini bildiririk.
 
-```
+```js
 async function funk() {
   return "cavab gəldi";
 }
 ```
 
-```
+```js
 function gosteren(kod) {
   document.getElementById("demo").innerHTML = kod;
 }
@@ -352,7 +348,7 @@ funk().then(
 
 Həmçinin await açar sözü yalnız async olduqda istifadə edilə bilər.
 
-```
+```js
 async function funk() {
   let vedim = new Promise(function(resolve, reject) {
     resolve("Asinxron funksiya ilə cavab gələcəyini vəd etdik.");
@@ -364,7 +360,8 @@ funk();
 ```
 
 Həmçinin yuxarıdakı nəticəni setTimeout vasitəsi ilə gözlədə də bilərik.
-```
+
+```js
 async function funk() {
   let vedim = new Promise(function(resolve, reject) {
     setTimeout(function(){
@@ -379,7 +376,7 @@ funk();
 
 Yuxarıdakı nümunələrdə gördüyümüz fayl gələcəyini vəd edən (və ya hər hansı link ola bilərdi) nümunəni eyni qaydada asinxron olaraq yazaq
 
-```
+```js
 async function fayl() {
   let vedim = new Promise(function(resolve) {
     let req = new XMLHttpRequest();
@@ -401,7 +398,7 @@ fayl();
 
 Və ya başqa bir nümunələrdə async istifadəsinə baxaq
 
-```
+```js
 const melumatiGetir = async() => {
     var data = "Asinxron işləyəcək və məlumat sonradan gələcək";
     return data;
@@ -412,7 +409,7 @@ melumatiGetir().then(data => console.log(data));
 
 Aşağıdakı nümunədə isə ilk növbədə konsolumuzda 1 və 2 rəqəmləri görünəcək. Daha sonra isə y dəyişkəni konsolda yazılacaq. Bunun səbəbi asinxron funksiyanı await ilə gözləməyimizdir.
 
-```
+```js
 const melumatiGetir = async() => {
     var y = await "Asinxron işləyəcək və məlumat sonradan gələcək";
     console.log(y);
@@ -425,7 +422,7 @@ console.log(2);
 
 Digər bir nümunə ilə isə, daha qəliz bir necə asinxron funksiya işlətməyə çalışaq.
 
-```
+```js
 function asinxronVeVedliFunksiya() {
   let ilkVed = new Promise((resolve, reject) => resolve("Hello"));
   let ikinciVed = new Promise((resolve, reject) => {
@@ -445,12 +442,11 @@ async function goster() {
 goster();
 ```
 
-
-# Fetch API
+## Fetch API
 
 Fetch API brauzerə veb serverlərə HTTP sorğuları göndərməyə imkan verir.
 
-```
+```js
 const fayl = "metn.txt"
 
 fetch (fayl).then(x => x.text()).then(y => console.log(y))
@@ -458,7 +454,7 @@ fetch (fayl).then(x => x.text()).then(y => console.log(y))
 
 Fetch API asinxron funksiyalarla birlikdə istifadə olunması isə daha məqsədə uyğundur. Çünki göndərilən HTTP sorğusu gec gələ və ya gələrkən xəta ilə də gələ bilər.
 
-```
+```js
 metniGetir("metn.txt");
 
 async function metniGetir(fayl) {
@@ -472,10 +468,9 @@ Nümunəmizi daha da çətinləşdirək və [JSONPlaceholder](https://jsonplaceh
 
 Fetch API *məlumatın gətirilməsi*, *yenisinin əlavə edilməsi*, *yenilənməsi*, *dəyişdirilməsi* və *silinməsi* kimi metodlara sahibdir
 
+- *Fetch ilə hər hansı metod bildirilmədiyi halda default olaraq GET metodu (məlumatları gətirmə) işləyir.*
 
-+ *Fetch ilə hər hansı metod bildirilmədiyi halda default olaraq GET metodu (məlumatları gətirmə) işləyir.*
-
-```
+```js
 async function funk() {
     let obyektler = await fetch('https://jsonplaceholder.typicode.com/posts')
         .then(cavab => cavab.json())
@@ -484,9 +479,9 @@ async function funk() {
 funk();
 ```
 
-+ Fetch vasitəsi ilə API-yə yeni məlumat göndərmə
+- Fetch vasitəsi ilə API-yə yeni məlumat göndərmə
 
-```
+```js
 fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
   body: JSON.stringify({
@@ -502,9 +497,9 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   .then((json) => console.log(json));
 ```
 
-+ Fetch vasitəsi ilə var olan məlumatı yeniləmə üsulu
+- Fetch vasitəsi ilə var olan məlumatı yeniləmə üsulu
 
-```
+```js
 fetch('https://jsonplaceholder.typicode.com/posts/1', {
   method: 'PUT',
   body: JSON.stringify({
@@ -521,9 +516,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1', {
   .then((json) => console.log(json));
 ```
 
-+ Fetch ilə mövcud məlumatın düzəldilməsi
+- Fetch ilə mövcud məlumatın düzəldilməsi
 
-```
+```js
 fetch('https://jsonplaceholder.typicode.com/posts/1', {
   method: 'PATCH',
   body: JSON.stringify({
@@ -537,30 +532,29 @@ fetch('https://jsonplaceholder.typicode.com/posts/1', {
   .then((json) => console.log(json));
 ```
 
-+ Fetch ilə hər hansı məlumatın silinməsi
+- Fetch ilə hər hansı məlumatın silinməsi
 
-```
+```js
 fetch('https://jsonplaceholder.typicode.com/posts/1', {
   method: 'DELETE',
 });
 ```
 
-# JSON
+## JSON
 
-JavaScript Object Notation (JSON) JavaScript obyekt sintaksisinə əsaslanan strukturlaşdırılmış məlumatları təmsil etmək üçün standart mətn əsaslı formatdır. O, əsasən proqramlarında məlumatların ötürülməsi üçün istifadə olunur (məsələn, bəzi məlumatların serverdən müştəriyə göndərilməsi, ona görə də onlar veb-səhifədə göstərilə bilər və ya əksinə). 
+JavaScript Object Notation (JSON) JavaScript obyekt sintaksisinə əsaslanan strukturlaşdırılmış məlumatları təmsil etmək üçün standart mətn əsaslı formatdır. O, əsasən proqramlarında məlumatların ötürülməsi üçün istifadə olunur (məsələn, bəzi məlumatların serverdən müştəriyə göndərilməsi, ona görə də onlar veb-səhifədə göstərilə bilər və ya əksinə).
 
 JSON JavaScript obyektinin hərfi sintaksisinə yaxından bənzəsə də, JavaScript-dən müstəqil olaraq istifadə edilə bilər və bir çox proqramlaşdırma mühitləri JSON-u oxumaq (analiz etmək) və yaratmaq qabiliyyətinə malikdir.
 
 JSON sətir kimi mövcuddur — məlumatı şəbəkə üzrə ötürmək istədiyiniz zaman faydalıdır. Məlumata daxil olmaq istədiyiniz zaman onu yerli JavaScript obyektinə çevirmək lazımdır. Bu böyük problem deyil - JavaScript ikisi arasında konvertasiya etmək üçün mövcud üsullara malik qlobal JSON obyekti təqdim edir.
 
-
 Bir sətri local obyektə çevirmək deserializasiya, local obyekti şəbəkə üzrə ötürülə bilməsi üçün sətirə çevirmək serializasiya adlanır.
 
 Hazırda bu qovluq daxilində data.json adlı faylımız var və bu fayla Fetch API ilə müraciət edib məlumatları çəkməyə və üzərində işləməyə çalışaq
 
-
 Qayıdan məlumatları json tipində qəbul etdik.
-```
+
+```js
 async function melumatGetir() {
     const sorguLinki = './data.json';
     const request = new Request(sorguLinki);
@@ -572,9 +566,10 @@ async function melumatGetir() {
 }
 melumatGetir()
 ```
+
 Həmçinin məlumatları JSON.parse(vairable) vasitəsi ilə strinq tipindən obyekt tipiniə deserilizasiya edə bilərik.
 
-```
+```js
 async function melumatGetir() {
 
     const sorguLinki = './data.json';
@@ -588,9 +583,10 @@ async function melumatGetir() {
 }
 melumatGetir()
 ```
+
 Və yaxud məlumatı json tipinə serializasiya edə bilərik
 
-```
+```js
 let obyk = { ad: "RG Academy", "ders": "Frontend" };
 let strinqim = JSON.stringify(obyk);
 console.log(strinqim);
